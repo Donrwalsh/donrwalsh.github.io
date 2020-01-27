@@ -29,3 +29,9 @@ Jekyll documentation https://jekyllrb.com/docs/
 https://jekyllrb.com/docs/step-by-step/01-setup/
 
 Favicon sourced from: https://gauger.io/fonticon/
+
+https://stackoverflow.com/questions/33113945/can-jekyll-use-a-config-file-from-a-different-repo <- Didn't have a ton of luck trying this out.
+
+It would be swell to share assets such as templates between different repos so I can link out to CLRS stuff without pulling it in here.
+
+This looks cool for a readme template: https://github.com/othneildrew/Best-README-Template/blob/master/README.md
