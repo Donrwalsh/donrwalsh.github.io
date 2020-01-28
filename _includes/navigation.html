@@ -1,15 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand navbar-dark bg-dark">
   <span class="navbar-brand mb-0 h1">Don R Walsh</span>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      {% for item in site.data.navigation %}
-        <li class="nav-item {% if page.url == item.link %}current{% endif %}">
-          <a class="nav-link" href="{{ item.link }}"> {{ item.name }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+  <ul class="nav navbar-nav nav-flex-icons ml-auto">
+    {% for item in site.data.navigation %}
+      <li class="nav-item {% if page.url == item.link %}current{% endif %}">
+        <a class="nav-link" href="{{ item.link }}">
+          <i class="fas fa-{{ item.icon }}"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block"> {{ item.name }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 </nav>
