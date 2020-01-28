@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Home</title>
+	<title>Exercise 2.1-2</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
@@ -20,7 +20,7 @@
   <span class="navbar-brand mb-0 h1">Don R Walsh</span>
   <ul class="nav navbar-nav nav-flex-icons ml-auto">
     
-      <li class="nav-item current">
+      <li class="nav-item ">
         <a class="nav-link" href="/">
           <i class="fas fa-home"></i>
           <span class="nav-span clearfix d-none d-sm-inline-block"> Home</span>
@@ -44,8 +44,28 @@
   </ul>
 </nav>
     <div class="container">
-      <h1> Hello There</h1>
+      <h2>Exercise 2.1-2</h2>
+      <p><strong>Rewrite the INSERTION-SORT procedure to sort into nonincreasing instead of nondecreasing order.</strong></p>
 
+<p>The only necessary change is to change the <code class="highlighter-rouge">&gt;</code> on line 5 to a <code class="highlighter-rouge">&lt;</code>.</p>
+
+<p>INSERTION-SORT(A)</p>
+
+<p>1 <code class="highlighter-rouge">for  j = 2 to A.length</code>:</p>
+
+<p>2     <code class="highlighter-rouge">key = A[j]</code></p>
+
+<p>3     <code class="highlighter-rouge">//Insert A[j] into the sorted sequence A[1..j-1].</code></p>
+
+<p>4     <code class="highlighter-rouge">i = j - 1</code></p>
+
+<p>5     <code class="highlighter-rouge">while i &gt; 0 and A[i] &lt; key</code>:</p>
+
+<p>6         <code class="highlighter-rouge">A[i+1] = A[i]</code></p>
+
+<p>7         <code class="highlighter-rouge">i = i - 1</code></p>
+
+<p>8     <code class="highlighter-rouge">A[i+1] = key</code></p>
 
     </div>
   </body>

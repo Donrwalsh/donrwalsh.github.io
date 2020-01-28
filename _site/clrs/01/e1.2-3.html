@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Home</title>
+	<title>Exercise 1.2-3</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
@@ -20,7 +20,7 @@
   <span class="navbar-brand mb-0 h1">Don R Walsh</span>
   <ul class="nav navbar-nav nav-flex-icons ml-auto">
     
-      <li class="nav-item current">
+      <li class="nav-item ">
         <a class="nav-link" href="/">
           <i class="fas fa-home"></i>
           <span class="nav-span clearfix d-none d-sm-inline-block"> Home</span>
@@ -44,8 +44,29 @@
   </ul>
 </nav>
     <div class="container">
-      <h1> Hello There</h1>
+      <h2>Exercise 1.2-3</h2>
+      <p><strong>What is the smallest value of n such that an algorithm whose running time is 100<em>n</em><sup>2</sup> runs faster than an algorithm whose running time is 2<sup>n</sup> on the same machine?</strong></p>
 
+<p>I wrote <code class="highlighter-rouge">algorithm_compare.py</code> to calculate that the lowest value of <em>n</em> that satisfies this condition is 15.</p>
+
+<p><strong>algorithm_compare.py:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">run_time_01</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">n</span> <span class="o">**</span> <span class="mi">2</span>
+
+
+<span class="k">def</span> <span class="nf">run_time_02</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">**</span> <span class="n">n</span>
+
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">run_time_01</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">run_time_02</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Lowest value of n is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div></div>
 
     </div>
   </body>

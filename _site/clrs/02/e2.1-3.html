@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercise 2.1-3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+	<!-- stylesheets and javascripts -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="/assets/css/styles.css">
+
+	<script src="https://kit.fontawesome.com/3dfeca0aaa.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+  <body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+  <span class="navbar-brand mb-0 h1">Don R Walsh</span>
+  <ul class="nav navbar-nav nav-flex-icons ml-auto">
+    
+      <li class="nav-item ">
+        <a class="nav-link" href="/">
+          <i class="fas fa-home"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block"> Home</span>
+        </a>
+      </li>
+    
+      <li class="nav-item ">
+        <a class="nav-link" href="/about.html">
+          <i class="fas fa-address-card"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block"> About</span>
+        </a>
+      </li>
+    
+      <li class="nav-item ">
+        <a class="nav-link" href="/clrs.html">
+          <i class="fas fa-graduation-cap"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block"> CLRS</span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+    <div class="container">
+      <h2>Exercise 2.1-3</h2>
+      <p><strong>Consider the searching problem:</strong></p>
+
+<p><strong><em>Input</em>: A sequence of n numbers <em>A = {a<sub>1</sub>, a<sub>2</sub>, …, a<sub>n</sub>}</em> and a value <em>v</em>.</strong></p>
+
+<p><strong><em>Output</em>: An index <em>i</em> such that <em>v</em> = <em>A[i]</em> or the special value NIL if <em>v</em> does not appear in <em>A</em>.</strong></p>
+
+<p><strong>Write pseudocode for <em>linear search</em>, which scans through the sequence, looking for <em>v</em>. Using a loop invariant, prove that your algorithm is correct. Make sure that your loop invariant fulfills the three necessary properties.</strong></p>
+
+<p>LINEAR-SEARCH(A, v)</p>
+
+<p>1 <code class="highlighter-rouge">i = NIL</code></p>
+
+<p>2 <code class="highlighter-rouge">for j = 1 to A.length</code>:</p>
+
+<p>3      <code class="highlighter-rouge">if A[j] == v</code>:</p>
+
+<p>4          <code class="highlighter-rouge">i = j</code></p>
+
+<p>5          <code class="highlighter-rouge">break</code></p>
+
+<p>6 <code class="highlighter-rouge">return i</code></p>
+
+<p><em>Loop Invariant</em>: At the start of each iteration of the for loop of lines 2-5, the subarray <em>A[1, … j-1]</em> consists of elements that are not <em>v</em>.</p>
+
+<p><strong>Initialization</strong>: At initialization, the subarray contains no elements, therefore it does not contain <em>v</em>.</p>
+
+<p><strong>Maintenance</strong>: We already know that <em>A[1, … j-1]</em> does not contain <em>v</em>. We then check to see if the element <em>A[j]</em> is <em>v</em> and assign it to the variable <em>i</em> if it does. We also break the for loop in this case, and will then return <em>i</em> which is the index of where <em>v</em> appears in <em>A</em>. Otherwise, we continue to the next iteration of the loop and because we did not find <em>v</em> at position <em>j</em>, the resulting array still does not contain <em>v</em> which means the invariant holds.</p>
+
+<p><strong>Termination</strong>: The loop will terminate when <em>j</em> is greater than the length of <em>A</em>. Since we are incrementing <em>j</em> by 1, we have thus examined each element of <em>A</em> and determined that none of them contain <em>v</em>, in which case we return NIL.</p>
+
+    </div>
+  </body>
+</html>
