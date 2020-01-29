@@ -9,11 +9,12 @@
 	<!-- stylesheets and javascripts -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="/assets/css/styles.css">
+	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 	<script src="https://kit.fontawesome.com/3dfeca0aaa.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
   <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -43,26 +44,31 @@
     
   </ul>
 </nav>
-    <div class="container">
+    <main role="main" class="clrs-solution container">
       <h2>Exercise 1.2-2</h2>
-      <p><strong>Suppose we are comparing implementations of insertion sort and merge sort on the same machine. For inputs of size <em>n</em>, insertion sort runs in 8<em>n</em><sup>2</sup> steps, while merge sort runs in 64<em>n</em>lg<em>n</em> steps. For which values of <em>n</em> does insertion sort beat merge sort</strong></p>
+      <div class="clrs-solution">
+        <blockquote>
+  <p>Suppose we are comparing implementations of insertion sort and merge sort on the same machine. For inputs of size <script type="math/tex">n</script>, insertion sort runs in <script type="math/tex">8n^2</script> steps, while merge sort runs in <script type="math/tex">64n \lg n</script> steps. For which values of <script type="math/tex">n</script> does insertion sort beat merge sort?</p>
+</blockquote>
 
-<p>First of all, 8<em>n</em><sup>2</sup> &lt; 64<em>n</em>lg<em>n</em> reduces to <em>n</em> &lt; 8lg<em>n</em>. Next I used <code class="highlighter-rouge">sort_compare.py</code> to determine when insertion sort overtakes merge sort, which is at <em>n</em> = 43. (hilariously, this script wasn’t doing what I wanted it to until I set n to start at 2 instead of 1)</p>
+<p>First of all, <script type="math/tex">% <![CDATA[
+8n^2 < 64n \lg n %]]></script> reduces to <script type="math/tex">% <![CDATA[
+n < 8 \lg n %]]></script>. Next I used <strong>sort_compare.py</strong> to determine when merge sort overtakes insertion sort, which occurs at <script type="math/tex">n = 44</script>. Merge sort is also more effective when <script type="math/tex">n = 1</script>. Therefore, insertion sort beats merge sort when <script type="math/tex">1 \lt n \leq 43</script>.</p>
 
 <p><strong>sort_compare.py:</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">math</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"for n = "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s">", merge sort beats insertion sort"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"for n = "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s">", insertion sort beats merge sort"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"for n = "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s">", insertion sort wins!"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"for n = "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s">", merge sort wins!"</span><span class="p">)</span>
         <span class="k">break</span>
-    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
-</code></pre></div></div>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span></code></pre></figure>
 
-    </div>
+      </div>
+    </main>
   </body>
 </html>

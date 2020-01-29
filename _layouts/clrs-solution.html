@@ -3,9 +3,11 @@
 {% include head.html %}
   <body>
     {% include navigation.html %}
-    <div class="container">
+    <main role="main" class="clrs-solution container">
       <h2>{{page.title}}</h2>
-      {{ content }}
-    </div>
+      <div class="clrs-solution">
+        {{ content }}
+      </div>
+    </main>
   </body>
 </html>

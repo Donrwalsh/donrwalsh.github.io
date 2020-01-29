@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Exercise 2.1-2</title>
+	<title>Problem 2-1</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
@@ -45,29 +45,20 @@
   </ul>
 </nav>
     <main role="main" class="clrs-solution container">
-      <h2>Exercise 2.1-2</h2>
+      <h2>Problem 2-1</h2>
       <div class="clrs-solution">
-        <p><strong>Rewrite the INSERTION-SORT procedure to sort into nonincreasing instead of nondecreasing order.</strong></p>
+        <p><strong>Although merge sort runs in θ(<em>n</em>lg<em>n</em>) worst-case time and insertion sort runs in θ(<em>n</em>²) worst-case time, the constant factors in insertion sort can make it faster in practice for small problem sizes on many machines. Thus, it makes sense to <em>coarsen</em> the leaves of the recursion by using insertion sort within merge sort when subproblems become sufficiently small. Consider a modification to merge sort in which <em>n</em>/<em>k</em> sublists of length <em>k</em> are sorted using insertion sort and then merged using the standard merging mechanism, where <em>k</em> is a value to be determined.</strong></p>
 
-<p>The only necessary change is to change the <code class="highlighter-rouge">&gt;</code> on line 5 to a <code class="highlighter-rouge">&lt;</code>.</p>
+<p><strong><em>a.</em> Show that insertion sort can sort the <em>n</em>/<em>k</em> sublists, each of length <em>k</em>, in θ(<em>nk</em>) worst-case time.</strong></p>
 
-<p>INSERTION-SORT(A)</p>
+<p>Sorting a sublist of length <em>k</em> takes θ(<em>k</em>²), so sorting <em>n</em>/<em>k</em> such sublists takes θ((<em>n</em>/<em>k</em>)<em>k</em>²) = θ(<em>nk</em>) worst-case time.</p>
 
-<p>1 <code class="highlighter-rouge">for  j = 2 to A.length</code>:</p>
+<p><strong><em>b.</em> Show how to merge the sublists in θ(<em>n</em>lg(<em>n</em>/<em>k</em>)) worst-case time.</strong></p>
 
-<p>2     <code class="highlighter-rouge">key = A[j]</code></p>
+<p>The MERGE procedure takes θ(<em>n</em>) time, and we must merge 2 sublists at a time which takes θ(lg(<em>n</em>/<em>k</em>)) time. Altogether, this will take θ(<em>n</em>lg(<em>n</em>/<em>k</em>)) worst-case time.</p>
 
-<p>3     <code class="highlighter-rouge">//Insert A[j] into the sorted sequence A[1..j-1].</code></p>
+<p><strong><em>c.</em> Given that the modified algorith runs in θ(<em>nk</em> + <em>n</em>lg(<em>n</em>/<em>k</em>)) worst-case time, what is the largest value of <em>k</em> as a function of <em>n</em> for which the modified algorithm has the same running time as standard merge sort, in terms of θ-notation?</strong></p>
 
-<p>4     <code class="highlighter-rouge">i = j - 1</code></p>
-
-<p>5     <code class="highlighter-rouge">while i &gt; 0 and A[i] &lt; key</code>:</p>
-
-<p>6         <code class="highlighter-rouge">A[i+1] = A[i]</code></p>
-
-<p>7         <code class="highlighter-rouge">i = i - 1</code></p>
-
-<p>8     <code class="highlighter-rouge">A[i+1] = key</code></p>
 
       </div>
     </main>

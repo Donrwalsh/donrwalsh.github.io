@@ -9,11 +9,12 @@
 	<!-- stylesheets and javascripts -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="/assets/css/styles.css">
+	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 	<script src="https://kit.fontawesome.com/3dfeca0aaa.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
   <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -43,12 +44,14 @@
     
   </ul>
 </nav>
-    <div class="container">
+    <main role="main" class="clrs-solution container">
       <h2>Exercise 2.3-7</h2>
-      <p><strong>Describe a θ(<em>n</em>lg<em>n</em>)-time algorithm that, given a set <em>S</em> of <em>n</em> integers and another integer <em>x</em>, determines whether or not there exist two elements in <em>S</em> whose sum is exactly <em>x</em>.</strong></p>
+      <div class="clrs-solution">
+        <p><strong>Describe a θ(<em>n</em>lg<em>n</em>)-time algorithm that, given a set <em>S</em> of <em>n</em> integers and another integer <em>x</em>, determines whether or not there exist two elements in <em>S</em> whose sum is exactly <em>x</em>.</strong></p>
 
 <p>Firstly we sort <em>S</em> by way of MERGE-SORT which takes θ(<em>n</em>lg<em>n</em>) time. We then iterate over our sorted array and use BINARY-SEARCH to determine if the integer that would sum to <em>x</em>. BINARY-SEARCH takes θ(lg<em>n</em>) time and doing it <em>n</em> times takes θ(<em>n</em>lg<em>n</em>) time. Since both these steps take θ(<em>n</em>lg<em>n</em>) time, combining the two of them is the same as multiplying that time by a constant factor. Therefore this algorithm runs at θ(<em>n</em>lg<em>n</em>) time.</p>
 
-    </div>
+      </div>
+    </main>
   </body>
 </html>

@@ -9,11 +9,12 @@
 	<!-- stylesheets and javascripts -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="/assets/css/styles.css">
+	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 	<script src="https://kit.fontawesome.com/3dfeca0aaa.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
   <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -43,9 +44,10 @@
     
   </ul>
 </nav>
-    <div class="container">
+    <main role="main" class="clrs-solution container">
       <h2>Exercise 2.2-2</h2>
-      <p><strong>Consider sorting <em>n</em> numbers stored in array <em>A</em> by ﬁrst ﬁnding the smallest element of <em>A</em> and exchanging it with the element in <em>A</em>[1]. Then ﬁnd the second smallest element of <em>A</em>, and exchange it with <em>A</em>[2]. Continue in this manner for the ﬁrst <em>n-1</em> elements of <em>A</em>. Write pseudocode for this algorithm, which is known as <em>selection sort</em>. What loop invariant does this algorithm maintain? Why does it need to run for only the ﬁrst <em>n-1</em> elements, rather than for all <em>n</em> elements? Give the best-case and worst-case running times of selection sort in Θ-notation.</strong></p>
+      <div class="clrs-solution">
+        <p><strong>Consider sorting <em>n</em> numbers stored in array <em>A</em> by ﬁrst ﬁnding the smallest element of <em>A</em> and exchanging it with the element in <em>A</em>[1]. Then ﬁnd the second smallest element of <em>A</em>, and exchange it with <em>A</em>[2]. Continue in this manner for the ﬁrst <em>n-1</em> elements of <em>A</em>. Write pseudocode for this algorithm, which is known as <em>selection sort</em>. What loop invariant does this algorithm maintain? Why does it need to run for only the ﬁrst <em>n-1</em> elements, rather than for all <em>n</em> elements? Give the best-case and worst-case running times of selection sort in Θ-notation.</strong></p>
 
 <p>SELECTION-SORT (A)</p>
 
@@ -73,6 +75,7 @@
 
 <p>Both the best and worst case running times are Θ(n<sup>2</sup>).</p>
 
-    </div>
+      </div>
+    </main>
   </body>
 </html>

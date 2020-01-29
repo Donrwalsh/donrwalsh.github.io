@@ -1,4 +1,4 @@
 collections:
   clrs:
     output: true
-  
+highlighter: rouge

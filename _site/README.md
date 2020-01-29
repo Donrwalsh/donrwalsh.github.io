@@ -5,6 +5,8 @@
 - Bootstrap
 - Fontawesome
 - jQuery
+- Mathjax
+- Rouge
 
 ## Breadcrumbs
 
@@ -35,3 +37,5 @@ It would be swell to share assets such as templates between different repos so I
 ^ This doesn't seem to be in the cards. I am going to roll my CLRS repo into this repo instead.
 
 This looks cool for a readme template: https://github.com/othneildrew/Best-README-Template/blob/master/README.md
+
+Syntax highlighting: https://mycyberuniverse.com/syntax-highlighting-jekyll.html
