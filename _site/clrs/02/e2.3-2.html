@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercise 2.3-2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+	<!-- stylesheets and javascripts -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="/assets/css/styles.css">
+
+	<script src="https://kit.fontawesome.com/3dfeca0aaa.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+  <body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+  <span class="navbar-brand mb-0 h1">Don R Walsh</span>
+  <ul class="nav navbar-nav nav-flex-icons ml-auto">
+    
+      <li class="nav-item ">
+        <a class="nav-link" href="/">
+          <i class="fas fa-home"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block"> Home</span>
+        </a>
+      </li>
+    
+      <li class="nav-item ">
+        <a class="nav-link" href="/about.html">
+          <i class="fas fa-address-card"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block"> About</span>
+        </a>
+      </li>
+    
+      <li class="nav-item ">
+        <a class="nav-link" href="/clrs.html">
+          <i class="fas fa-graduation-cap"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block"> CLRS</span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+    <div class="container">
+      <h2>Exercise 2.3-2</h2>
+      <p><strong>Rewrite the MERGE procedure so that it does not use sentinels, instead stopping once either array <em>L</em> or <em>R</em> has had all its elements copied back to <em>A</em> and then copying the remainder of the other array back into <em>A</em>.</strong></p>
+
+<p>MERGE-SORT (A, p, q, r)</p>
+
+<p>01 <code class="highlighter-rouge">n₁ = q - p + 1</code></p>
+
+<p>02 <code class="highlighter-rouge">n₂ = r - q</code></p>
+
+<p>03 <code class="highlighter-rouge">Let L[1 . . n₁] and R[1 . . n₂] be new arrays</code></p>
+
+<p>04 <code class="highlighter-rouge">for i = 1 to n₁</code></p>
+
+<p>05      <code class="highlighter-rouge">L[i] = A[p + i - 1]</code></p>
+
+<p>06 <code class="highlighter-rouge">for j = 1 to n₂</code></p>
+
+<p>07      <code class="highlighter-rouge">R[j] = A[q + j]</code></p>
+
+<p>08 <code class="highlighter-rouge">i = 1</code></p>
+
+<p>09 <code class="highlighter-rouge">j = 1</code></p>
+
+<p>10 <code class="highlighter-rouge">for k = p to r</code></p>
+
+<p>11      <code class="highlighter-rouge">j &gt; n₂</code></p>
+
+<p>12          <code class="highlighter-rouge">A[k] = L[i]</code></p>
+
+<p>13          <code class="highlighter-rouge">i = i + 1</code></p>
+
+<p>14      <code class="highlighter-rouge">else if if i &gt; n₁</code></p>
+
+<p>15          <code class="highlighter-rouge">A[k] = R[j]</code></p>
+
+<p>16          <code class="highlighter-rouge">j = j + 1</code></p>
+
+<p>17      <code class="highlighter-rouge">else if L[i] ≤ R[j]</code></p>
+
+<p>18          <code class="highlighter-rouge">A[k] = L[i]</code></p>
+
+<p>19          <code class="highlighter-rouge">i = i + 1</code></p>
+
+<p>20      <code class="highlighter-rouge">else</code></p>
+
+<p>21          <code class="highlighter-rouge">A[k] = R[j]</code></p>
+
+<p>22          <code class="highlighter-rouge">j = j + 1</code></p>
+
+    </div>
+  </body>
+</html>

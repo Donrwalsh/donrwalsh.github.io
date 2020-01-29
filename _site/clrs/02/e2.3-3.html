@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercise 2.3-3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+	<!-- stylesheets and javascripts -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="/assets/css/styles.css">
+
+	<script src="https://kit.fontawesome.com/3dfeca0aaa.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+  <body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+  <span class="navbar-brand mb-0 h1">Don R Walsh</span>
+  <ul class="nav navbar-nav nav-flex-icons ml-auto">
+    
+      <li class="nav-item ">
+        <a class="nav-link" href="/">
+          <i class="fas fa-home"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block"> Home</span>
+        </a>
+      </li>
+    
+      <li class="nav-item ">
+        <a class="nav-link" href="/about.html">
+          <i class="fas fa-address-card"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block"> About</span>
+        </a>
+      </li>
+    
+      <li class="nav-item ">
+        <a class="nav-link" href="/clrs.html">
+          <i class="fas fa-graduation-cap"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block"> CLRS</span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+    <div class="container">
+      <h2>Exercise 2.3-3</h2>
+      <p><strong>Use mathematical induction to show that when <em>n</em> is an exact power of 2, the solution of the recurrence</strong></p>
+
+<p><strong>T(n) = { 2, if n = 2</strong></p>
+
+<p><strong>T(n) = { 2T(n/2) + n, if n = 2<sup>k</sup>, for k &gt; 1</strong></p>
+
+<p><strong>is T(n) = <em>n</em>lg<em>n</em></strong></p>
+
+<p>In the base case, <em>k</em> = 1, and so <em>n</em> = 2<sup>1</sup>. <em>T</em>(<em>n</em>) = <em>n</em>lg<em>n</em> = 2·lg(2<sup>1</sup>) = 2·1 = 2.</p>
+
+<p>Next we suppose this holds for any <em>k</em> &gt; 1, and will show that it also holds for any <em>k</em> + 1:</p>
+
+<p><em>T</em>(<em>n</em>/2) + <em>n</em> = <em>n</em>lg<em>n</em></p>
+
+<p>2[(2<sup><em>k</em> + 1</sup>/2)·lg(2<sup><em>k</em> + 1</sup>/2)] + 2<sup><em>k</em> + 1</sup> = 2<sup><em>k</em> + 1</sup>lg2<sup><em>k</em> + 1</sup></p>
+
+<p>2{[2<sup><em>k</em> + 1</sup>/2]·[lg(2<sup><em>k</em> + 1</sup>/2) - lg2] + 2<sup><em>k</em> + 1</sup> = 2<sup><em>k</em> + 1</sup>(<em>k</em> + 1)</p>
+
+<p>2{[2<sup><em>k</em> + 1</sup>/2]·[<em>k</em> + 1 - 1] + 2<sup><em>k</em> + 1</sup> = 2<sup><em>k</em> + 1</sup>(<em>k</em> + 1)</p>
+
+<p>2<sup><em>k</em> + 1</sup>·<em>k</em> + 2<sup><em>k</em> + 1</sup> = 2<sup><em>k</em> + 1</sup>(<em>k</em> + 1)</p>
+
+<p>2<sup><em>k</em> + 1</sup>(<em>k</em> + 1) = 2<sup><em>k</em> + 1</sup>(<em>k</em> + 1)</p>
+
+    </div>
+  </body>
+</html>
