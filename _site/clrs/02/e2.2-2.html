@@ -47,7 +47,9 @@
     <main role="main" class="clrs-solution container">
       <h2>Exercise 2.2-2</h2>
       <div class="clrs-solution">
-        <p><strong>Consider sorting <em>n</em> numbers stored in array <em>A</em> by ﬁrst ﬁnding the smallest element of <em>A</em> and exchanging it with the element in <em>A</em>[1]. Then ﬁnd the second smallest element of <em>A</em>, and exchange it with <em>A</em>[2]. Continue in this manner for the ﬁrst <em>n-1</em> elements of <em>A</em>. Write pseudocode for this algorithm, which is known as <em>selection sort</em>. What loop invariant does this algorithm maintain? Why does it need to run for only the ﬁrst <em>n-1</em> elements, rather than for all <em>n</em> elements? Give the best-case and worst-case running times of selection sort in Θ-notation.</strong></p>
+        <blockquote>
+  <p>Consider sorting <script type="math/tex">n</script> numbers stored in array <script type="math/tex">A</script> by ﬁrst ﬁnding the smallest element of <script type="math/tex">A</script> and exchanging it with the element in <script type="math/tex">A[1]</script>. Then ﬁnd the second smallest element of <script type="math/tex">A</script>, and exchange it with <script type="math/tex">A[2]</script>. Continue in this manner for the ﬁrst <script type="math/tex">n-1</script> elements of <script type="math/tex">A</script>. Write pseudocode for this algorithm, which is known as <strong><em>selection sort</em></strong>. What loop invariant does this algorithm maintain? Why does it need to run for only the ﬁrst <script type="math/tex">n-1</script> elements, rather than for all <script type="math/tex">n</script> elements? Give the best-case and worst-case running times of selection sort in <script type="math/tex">\Theta</script>-notation.</p>
+</blockquote>
 
 <p>SELECTION-SORT (A)</p>
 
@@ -69,11 +71,11 @@
 
 <p>9      <code class="highlighter-rouge">A[i] = smallest_val</code></p>
 
-<p><em>Loop Invariant</em> At the start of each iteration of the loop in lines 1-9, the subarray <em>A</em>[1, … i-1] contains the smallest elements of A in increasing order. At the start of each iteration of the loop in lines 5-7, the smallest_val variable contains the smallest element of the subarray <em>A</em>[i, … j-1] and the smallest_pos variable contains that value’s position in the array.</p>
+<p><em>Loop Invariant</em> At the start of each iteration of the loop in lines 1-9, the subarray <script type="math/tex">A \langle 1, ..., i-1 \rangle</script> contains the smallest elements of <script type="math/tex">A</script> in increasing order. At the start of each iteration of the loop in lines 5-7, the <code class="highlighter-rouge">smallest_val</code> variable contains the smallest element of the subarray <script type="math/tex">A \langle i, ..., j-1 \rangle</script> and the <code class="highlighter-rouge">smallest_pos</code> variable contains that value’s position in the array.</p>
 
-<p>We only need to run this algorithm for the first <em>n-1</em> elements of the array because it is ‘forward-looking’. The <em>n</em>th element has nothing to be compared against and is therefore trivially the smallest element remaining (which is to say, the largest element).</p>
+<p>We only need to run this algorithm for the first <script type="math/tex">n-1</script> elements of the array because it is ‘forward-looking’. The <script type="math/tex">n</script>th element has nothing to be compared against and is therefore trivially the smallest element remaining (which is to say, the largest element).</p>
 
-<p>Both the best and worst case running times are Θ(n<sup>2</sup>).</p>
+<p>Both the best and worst case running times are <script type="math/tex">\Theta (n^2)</script>.</p>
 
       </div>
     </main>

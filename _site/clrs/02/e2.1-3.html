@@ -47,13 +47,15 @@
     <main role="main" class="clrs-solution container">
       <h2>Exercise 2.1-3</h2>
       <div class="clrs-solution">
-        <p><strong>Consider the searching problem:</strong></p>
+        <blockquote>
+  <p>Consider the <strong><em>searching problem</em></strong>:</p>
 
-<p><strong><em>Input</em>: A sequence of n numbers <em>A = {a<sub>1</sub>, a<sub>2</sub>, …, a<sub>n</sub>}</em> and a value <em>v</em>.</strong></p>
+  <p><strong>Input</strong>: A sequence of n numbers <script type="math/tex">A = \langle a_1, a_2, ..., a_n \rangle</script> and a value <script type="math/tex">v</script>.</p>
 
-<p><strong><em>Output</em>: An index <em>i</em> such that <em>v</em> = <em>A[i]</em> or the special value NIL if <em>v</em> does not appear in <em>A</em>.</strong></p>
+  <p><strong>Output</strong>: An index <script type="math/tex">i</script> such that <script type="math/tex">v = A[i]</script> or the special value NIL if <script type="math/tex">v</script> does not appear in <script type="math/tex">A</script>.</p>
 
-<p><strong>Write pseudocode for <em>linear search</em>, which scans through the sequence, looking for <em>v</em>. Using a loop invariant, prove that your algorithm is correct. Make sure that your loop invariant fulfills the three necessary properties.</strong></p>
+  <p>Write pseudocode for <strong><em>linear search</em></strong>, which scans through the sequence, looking for <script type="math/tex">v</script>. Using a loop invariant, prove that your algorithm is correct. Make sure that your loop invariant fulfills the three necessary properties.</p>
+</blockquote>
 
 <p>LINEAR-SEARCH(A, v)</p>
 
@@ -69,13 +71,13 @@
 
 <p>6 <code class="highlighter-rouge">return i</code></p>
 
-<p><em>Loop Invariant</em>: At the start of each iteration of the for loop of lines 2-5, the subarray <em>A[1, … j-1]</em> consists of elements that are not <em>v</em>.</p>
+<p><em>Loop Invariant</em>: At the start of each iteration of the for loop of lines 2-5, the subarray <script type="math/tex">A \langle 1, ... j-1 \rangle</script> consists of elements that are not <script type="math/tex">v</script>.</p>
 
-<p><strong>Initialization</strong>: At initialization, the subarray contains no elements, therefore it does not contain <em>v</em>.</p>
+<p><strong>Initialization</strong>: At initialization, the subarray contains no elements, therefore it does not contain <script type="math/tex">v</script>.</p>
 
-<p><strong>Maintenance</strong>: We already know that <em>A[1, … j-1]</em> does not contain <em>v</em>. We then check to see if the element <em>A[j]</em> is <em>v</em> and assign it to the variable <em>i</em> if it does. We also break the for loop in this case, and will then return <em>i</em> which is the index of where <em>v</em> appears in <em>A</em>. Otherwise, we continue to the next iteration of the loop and because we did not find <em>v</em> at position <em>j</em>, the resulting array still does not contain <em>v</em> which means the invariant holds.</p>
+<p><strong>Maintenance</strong>: We already know that <script type="math/tex">A \langle 1, ... j-1 \rangle</script> does not contain <script type="math/tex">v</script>. We then check to see if the element <script type="math/tex">A[j]</script> is <script type="math/tex">v</script> and assign it to the variable <script type="math/tex">i</script> if it does. We also break the for loop in this case, and will then return <script type="math/tex">i</script> which is the index of where <script type="math/tex">v</script> appears in <script type="math/tex">A</script>. Otherwise, we continue to the next iteration of the loop and because we did not find <script type="math/tex">v</script> at position <script type="math/tex">j</script>, the resulting array still does not contain <script type="math/tex">v</script> which means the invariant holds.</p>
 
-<p><strong>Termination</strong>: The loop will terminate when <em>j</em> is greater than the length of <em>A</em>. Since we are incrementing <em>j</em> by 1, we have thus examined each element of <em>A</em> and determined that none of them contain <em>v</em>, in which case we return NIL.</p>
+<p><strong>Termination</strong>: The loop will terminate when <script type="math/tex">j</script> is greater than the length of <script type="math/tex">A</script>. Since we are incrementing <script type="math/tex">j</script> by 1, we have thus examined each element of <script type="math/tex">A</script> and determined that none of them contain <script type="math/tex">v</script>, in which case we return NIL.</p>
 
       </div>
     </main>
