@@ -47,13 +47,18 @@
     <main role="main" class="clrs-solution container">
       <h2>Exercise 2.3-4</h2>
       <div class="clrs-solution">
-        <p><strong>We can express insertion sort as a recursive procedure as follows. In order to sort <em>A</em>[1..<em>n</em>], we recursively sort <em>A</em>[1..<em>n</em>-1] and then insert <em>A</em>[<em>n</em>] into the sorted array <em>A</em>[1..<em>n</em>-1]. Write a recurrence for the worst-case runnig time of this recursive version of insertion sort.</strong></p>
+        <blockquote>
+  <p>We can express insertion sort as a recursive procedure as follows. In order to sort <script type="math/tex">A[1..n]</script>, we recursively sort <script type="math/tex">A[1..n-1]</script> and then insert <script type="math/tex">A[n]</script> into the sorted array <script type="math/tex">A[1..n-1]</script>. Write a recurrence for the worst-case running time of this recursive version of insertion sort.</p>
+</blockquote>
 
-<p>Our division of the problem yields 1 subproblem of size <em>n</em>/(<em>n</em>-1). Dividing the problem takes constant θ(1) time, whereas solving it in the worst case takes θ(<em>n</em>-1) time. Using our recurrence calculation (pg.35):</p>
+<p>Our division of the problem yields 1 subproblem of size <script type="math/tex">\frac{n}{n-1}</script>. Dividing the problem takes constant <script type="math/tex">\Theta(1)</script> time, whereas solving it in the worst case takes <script type="math/tex">\Theta(n-1)</script> time. Using our recurrence calculation (pg.35):</p>
 
-<p><em>T</em>(<em>n</em>) = θ(1), if <em>n</em> = 1</p>
-
-<p><em>T</em>(<em>n</em>) = T(<em>n</em> - 1) + θ(<em>n</em>), if <em>n</em> &gt; 1</p>
+<script type="math/tex; mode=display">% <![CDATA[
+T(n) =
+  \begin{cases}
+    \Theta(1) & \text{if $n=1$} \\
+    T(n-1) + \Theta(n) & \text{if $n>1$} \\
+  \end{cases} %]]></script>
 
       </div>
     </main>

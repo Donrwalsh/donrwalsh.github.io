@@ -47,9 +47,11 @@
     <main role="main" class="clrs-solution container">
       <h2>Exercise 2.3-6</h2>
       <div class="clrs-solution">
-        <p><strong>Observe that the <em>while</em> loop of lines 5-7 of the INSERTION-SORT procedure in Section 2.1 uses a linear search to scan (backward) through the sorted subarray <em>A</em>[1..<em>j</em> - 1]. Can we use a binary search (see Exercise 2.3-5) instead to improve the overall worst-case running time of insertion sort to θ(<em>n</em>lg<em>n</em>)?</strong></p>
+        <blockquote>
+  <p>Observe that the <strong>while</strong> loop of lines 5-7 of the INSERTION-SORT procedure in Section 2.1 uses a linear search to scan (backward) through the sorted subarray <script type="math/tex">A[1..j - 1]</script>. Can we use a binary search (see Exercise 2.3-5) instead to improve the overall worst-case running time of insertion sort to <script type="math/tex">\Theta(n \lg n)</script>?</p>
+</blockquote>
 
-<p>The worst-case running time for INSERTION-SORT as presented in section 2.1 involves an array that is in reverse-sort order which we know has a running time of θ(<em>n</em>²). The while loop in question effectively contributes one of the <em>n</em> values of our run-time, so it seems that we may be able to reduce the worst-case run time by applying INSERTION-SORT. However, this while loop does more than just locate a value. It shifts all of the values one by one as it is searching for the proper location to insert, and thus the worst-case run-time cannot be reduced as we still need to act on each value in our sorted subarray.</p>
+<p>The worst-case running time for INSERTION-SORT as presented in section 2.1 involves an array that is in reverse-sort order which we know has a running time of <script type="math/tex">\Theta(n^2)</script>. The while loop in question effectively contributes one of the <script type="math/tex">n</script> values of our run-time, so it seems that we may be able to reduce the worst-case run time by applying INSERTION-SORT. However, this while loop does more than just locate a value. It shifts all of the values one by one as it is searching for the proper location to insert, and thus the worst-case run-time cannot be reduced as we still need to act on each value in our sorted subarray.</p>
 
       </div>
     </main>

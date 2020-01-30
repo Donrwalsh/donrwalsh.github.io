@@ -47,29 +47,34 @@
     <main role="main" class="clrs-solution container">
       <h2>Exercise 2.3-3</h2>
       <div class="clrs-solution">
-        <p><strong>Use mathematical induction to show that when <em>n</em> is an exact power of 2, the solution of the recurrence</strong></p>
+        <blockquote>
+  <p>Use mathematical induction to show that when <script type="math/tex">n</script> is an exact power of 2, the solution of the recurrence</p>
 
-<p><strong>T(n) = { 2, if n = 2</strong></p>
+  <script type="math/tex; mode=display">% <![CDATA[
+T(n) =
+  \begin{cases}
+    2 & \text{if $n=2$} \\
+    2T(\frac{n}{2}) + n & \text{if $n=2^k$ for $k>1$} \\
+  \end{cases} %]]></script>
 
-<p><strong>T(n) = { 2T(n/2) + n, if n = 2<sup>k</sup>, for k &gt; 1</strong></p>
+  <p>is <script type="math/tex">T(n) = n \lg n</script>.</p>
+</blockquote>
 
-<p><strong>is T(n) = <em>n</em>lg<em>n</em></strong></p>
+<p>In the base case, <script type="math/tex">k = 1</script>, and so <script type="math/tex">n = 2^1</script>. <script type="math/tex">T(n) = n \lg n = 2 \lg(2^1) = 2</script>.</p>
 
-<p>In the base case, <em>k</em> = 1, and so <em>n</em> = 2<sup>1</sup>. <em>T</em>(<em>n</em>) = <em>n</em>lg<em>n</em> = 2·lg(2<sup>1</sup>) = 2·1 = 2.</p>
+<p>Next we suppose this holds for any <script type="math/tex">k > 1</script>, and will show that it also holds for any <script type="math/tex">k + 1</script>:</p>
 
-<p>Next we suppose this holds for any <em>k</em> &gt; 1, and will show that it also holds for any <em>k</em> + 1:</p>
-
-<p><em>T</em>(<em>n</em>/2) + <em>n</em> = <em>n</em>lg<em>n</em></p>
-
-<p>2[(2<sup><em>k</em> + 1</sup>/2)·lg(2<sup><em>k</em> + 1</sup>/2)] + 2<sup><em>k</em> + 1</sup> = 2<sup><em>k</em> + 1</sup>lg2<sup><em>k</em> + 1</sup></p>
-
-<p>2{[2<sup><em>k</em> + 1</sup>/2]·[lg(2<sup><em>k</em> + 1</sup>/2) - lg2] + 2<sup><em>k</em> + 1</sup> = 2<sup><em>k</em> + 1</sup>(<em>k</em> + 1)</p>
-
-<p>2{[2<sup><em>k</em> + 1</sup>/2]·[<em>k</em> + 1 - 1] + 2<sup><em>k</em> + 1</sup> = 2<sup><em>k</em> + 1</sup>(<em>k</em> + 1)</p>
-
-<p>2<sup><em>k</em> + 1</sup>·<em>k</em> + 2<sup><em>k</em> + 1</sup> = 2<sup><em>k</em> + 1</sup>(<em>k</em> + 1)</p>
-
-<p>2<sup><em>k</em> + 1</sup>(<em>k</em> + 1) = 2<sup><em>k</em> + 1</sup>(<em>k</em> + 1)</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation} \label{eq1}
+\begin{split}
+T(\frac{n}{2}) + n & = n \lg n \\
+2\frac{2^{k+1}}{2} \lg\frac{2^{k+1}}{2} + 2^{k+1} & = 2^{k+1} \lg 2^{k+1} \\
+2\frac{2^{k+1}}{2} (\lg 2^{k+1} - \lg 2) + 2^{k+1} & = 2^{k+1}(k+1) \\
+2\frac{2^{k+1}}{2} (k + 1 - 1) + 2^{k+1} & = 2^{k+1}(k+1) \\
+2^{k+1}k +2^{k+1} & = 2^{k+1}(k+1) \\
+2^{k+1}(k+1) & = 2^{k+1}(k+1) \\
+\end{split}
+\end{equation} %]]></script>
 
       </div>
     </main>

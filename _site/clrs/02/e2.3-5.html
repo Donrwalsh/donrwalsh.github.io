@@ -47,23 +47,25 @@
     <main role="main" class="clrs-solution container">
       <h2>Exercise 2.3-5</h2>
       <div class="clrs-solution">
-        <p><strong>Referring back to the searching problem (see Exercise 2.1-3), observe that if the sequence <em>A</em> is sorted, we can check the midpoint of the sequence against <em>v</em> and eliminate half of the sequence from further consideration. The <em>binary search</em> algorithm repeats this procedure, halving the size of the remaining portion of the sequence each time. Write pseudocode, either iterative or recursive, for binary search. Argue that the worst-case running time of binary search is θ(lg<em>n</em>).</strong></p>
+        <blockquote>
+  <p>Referring back to the searching problem (see Exercise 2.1-3), observe that if the sequence <script type="math/tex">A</script> is sorted, we can check the midpoint of the sequence against <script type="math/tex">v</script> and eliminate half of the sequence from further consideration. The <strong><em>binary search</em></strong> algorithm repeats this procedure, halving the size of the remaining portion of the sequence each time. Write pseudocode, either iterative or recursive, for binary search. Argue that the worst-case running time of binary search is <script type="math/tex">\Theta(\lg n)</script>.</p>
+</blockquote>
 
-<p>BINARY-SEARCH(<em>A</em>, <em>v</em>)</p>
+<p>BINARY-SEARCH(A, v)</p>
 
-<p><em>i</em> = 0</p>
+<p>1 <code class="highlighter-rouge">i = 0</code></p>
 
-<p><em>j</em> = ceiling(<em>A</em>.length/2)</p>
+<p>2 <code class="highlighter-rouge">j = ceiling(A.length/2)</code></p>
 
-<p>if <em>A</em>[<em>j</em>] = <em>v</em> { <em>i</em> += <em>j</em> }</p>
+<p>3 <code class="highlighter-rouge">if A[j] = v { i += j }</code></p>
 
-<p>else if <em>A</em>[<em>j</em>] &lt; <em>v</em> { <em>i</em> += <em>j</em> + BINARY-SEARCH(<em>A</em>[<em>j</em> + 1,…,<em>n</em>]) }</p>
+<p>4 <code class="highlighter-rouge">else if A[j] &lt; v { i += j + BINARY-SEARCH(A[j + 1,...,n]) }</code></p>
 
-<p>else if <em>A</em>[<em>j</em>] &gt; <em>v</em> { <em>i</em> += BINARY-SEARCH(<em>A</em>[1,…,<em>j</em> - 1]) }</p>
+<p>5 <code class="highlighter-rouge">else if A[j] &gt; v { i += BINARY-SEARCH(A[1,...,j - 1]) }</code></p>
 
-<p>return <em>i</em></p>
+<p>6 <code class="highlighter-rouge">return i</code></p>
 
-<p>Intuitively, the worst-case scenrio for BINARY-SEARCH is when <em>v</em> does not exist in <em>A</em> at all. In which case we halve the array as many times as possible, which takes θ(lg<em>n</em>).</p>
+<p>Intuitively, the worst-case scenrio for BINARY-SEARCH is when <script type="math/tex">v</script> does not exist in <script type="math/tex">A</script> at all. In which case we halve the array as many times as possible, which takes <script type="math/tex">\Theta(\lg n)</script>.</p>
 
       </div>
     </main>

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Problem 2-1</title>
+	<title>Problem 2-1 Insertion sort on small arrays in merge sort</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
@@ -45,20 +45,35 @@
   </ul>
 </nav>
     <main role="main" class="clrs-solution container">
-      <h2>Problem 2-1</h2>
+      <h2>Problem 2-1 Insertion sort on small arrays in merge sort</h2>
       <div class="clrs-solution">
-        <p><strong>Although merge sort runs in θ(<em>n</em>lg<em>n</em>) worst-case time and insertion sort runs in θ(<em>n</em>²) worst-case time, the constant factors in insertion sort can make it faster in practice for small problem sizes on many machines. Thus, it makes sense to <em>coarsen</em> the leaves of the recursion by using insertion sort within merge sort when subproblems become sufficiently small. Consider a modification to merge sort in which <em>n</em>/<em>k</em> sublists of length <em>k</em> are sorted using insertion sort and then merged using the standard merging mechanism, where <em>k</em> is a value to be determined.</strong></p>
+        <blockquote>
+  <p>Although merge sort runs in <script type="math/tex">\Theta(n \lg n)</script> worst-case time and insertion sort runs in <script type="math/tex">\Theta(n^2)</script> worst-case time, the constant factors in insertion sort can make it faster in practice for small problem sizes on many machines. Thus, it makes sense to <strong><em>coarsen</em></strong> the leaves of the recursion by using insertion sort within merge sort when subproblems become sufficiently small. Consider a modification to merge sort in which <script type="math/tex">\frac{n}{k}</script> sublists of length <script type="math/tex">k</script> are sorted using insertion sort and then merged using the standard merging mechanism, where <script type="math/tex">k</script> is a value to be determined.</p>
+</blockquote>
 
-<p><strong><em>a.</em> Show that insertion sort can sort the <em>n</em>/<em>k</em> sublists, each of length <em>k</em>, in θ(<em>nk</em>) worst-case time.</strong></p>
+<blockquote>
+  <p><strong><em>a.</em></strong> Show that insertion sort can sort the <script type="math/tex">\frac{n}{k}</script> sublists, each of length <script type="math/tex">k</script>, in <script type="math/tex">\Theta(nk)</script> worst-case time.</p>
+</blockquote>
 
-<p>Sorting a sublist of length <em>k</em> takes θ(<em>k</em>²), so sorting <em>n</em>/<em>k</em> such sublists takes θ((<em>n</em>/<em>k</em>)<em>k</em>²) = θ(<em>nk</em>) worst-case time.</p>
+<p>Sorting a sublist of length <script type="math/tex">k</script> takes <script type="math/tex">\Theta(k^2)</script>, so sorting <script type="math/tex">\frac{n}{k}</script> such sublists takes <script type="math/tex">\Theta (\frac{n}{k}k^2) = \Theta(nk)</script> worst-case time.</p>
 
-<p><strong><em>b.</em> Show how to merge the sublists in θ(<em>n</em>lg(<em>n</em>/<em>k</em>)) worst-case time.</strong></p>
+<blockquote>
+  <p><strong><em>b.</em></strong> Show how to merge the sublists in <script type="math/tex">\Theta(n \lg(\frac{n}{k}))</script> worst-case time.</p>
+</blockquote>
 
-<p>The MERGE procedure takes θ(<em>n</em>) time, and we must merge 2 sublists at a time which takes θ(lg(<em>n</em>/<em>k</em>)) time. Altogether, this will take θ(<em>n</em>lg(<em>n</em>/<em>k</em>)) worst-case time.</p>
+<p>The MERGE procedure takes <script type="math/tex">\Theta(n)</script> time, and we must merge 2 sublists at a time which takes <script type="math/tex">\Theta(\lg(\frac{n}{k}))</script> time. Altogether, this will take <script type="math/tex">\Theta(n \lg \frac{n}{k})</script> worst-case time.</p>
 
-<p><strong><em>c.</em> Given that the modified algorith runs in θ(<em>nk</em> + <em>n</em>lg(<em>n</em>/<em>k</em>)) worst-case time, what is the largest value of <em>k</em> as a function of <em>n</em> for which the modified algorithm has the same running time as standard merge sort, in terms of θ-notation?</strong></p>
+<blockquote>
+  <p><strong><em>c.</em></strong> Given that the modified algorith runs in <script type="math/tex">\Theta(nk + n \lg \frac{n}{k}))</script> worst-case time, what is the largest value of <script type="math/tex">k</script> as a function of <script type="math/tex">n</script> for which the modified algorithm has the same running time as standard merge sort, in terms of <script type="math/tex">\Theta</script>-notation?</p>
+</blockquote>
 
+<p>Suppose <script type="math/tex">k = \lg n</script>. Then we have <script type="math/tex">nk + n \lg \frac{n}{k} = n \lg n + n(\lg n - \lg(\lg{n}))</script> which represents the same running time as a standard merge sort: <script type="math/tex">\Theta (n \lg n)</script>. If <script type="math/tex">k</script> were a larger function of <script type="math/tex">n</script>, the front term of <script type="math/tex">nk</script> would result in a greater running time.</p>
+
+<blockquote>
+  <p><strong><em>d.</em></strong> How should we choose <script type="math/tex">k</script> in practice?</p>
+</blockquote>
+
+<p>Our chosen value for <script type="math/tex">k</script> should be the largest value in which running INSERTION-SORT on a list of length <script type="math/tex">k</script> takes less time than running MERGE-SORT on the same list. See <a href="/clrs/01/e1.2-2">Exercise 1.2-2</a>.</p>
 
       </div>
     </main>
