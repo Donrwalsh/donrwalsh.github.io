@@ -47,110 +47,29 @@
     <main role="main" class="clrs-solution container">
       <h2>Problem 1-1</h2>
       <div class="clrs-solution">
-        <p><strong>For each function <em>f(n)</em> and time <em>t</em> in the following table, determine the largest size <em>n</em> of a problem that can be solved in time <em>t</em>, assuming that the algorithm to solve the problem takes <em>f(n)</em> microseconds.</strong></p>
+        <blockquote>
+  <p>For each function <script type="math/tex">f(n)</script> and time <script type="math/tex">t</script> in the following table, determine the largest size <script type="math/tex">n</script> of a problem that can be solved in time <script type="math/tex">t</script>, assuming that the algorithm to solve the problem takes <script type="math/tex">f(n)</script> microseconds.</p>
+</blockquote>
 
 <p>I wrote <code class="highlighter-rouge">running_time_compare.py</code> to solve this table. The numbers got pretty big, so I used some techniques to simplify the figures.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>1 second</th>
-      <th>1 minute</th>
-      <th>1 hour</th>
-      <th>1 day</th>
-      <th>1 month</th>
-      <th>1 year</th>
-      <th>1 century</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>lg <em>n</em></td>
-      <td>2<sup>10<sup>6</sup></sup></td>
-      <td>2<sup>6*10<sup>7</sup></sup></td>
-      <td>2<sup>3.6*10<sup>9</sup></sup></td>
-      <td>2<sup>8.64*10<sup>10</sup></sup></td>
-      <td>2<sup>2.59*10<sup>12</sup></sup></td>
-      <td>2<sup>3.15*10<sup>13</sup></sup></td>
-      <td>2<sup>3.15*10<sup>15</sup></sup></td>
-    </tr>
-    <tr>
-      <td>sqrt(<em>n</em>)</td>
-      <td>10<sup>12</sup></td>
-      <td>3.6*10<sup>15</sup></td>
-      <td>1.3*10<sup>19</sup></td>
-      <td>7.47*10<sup>21</sup></td>
-      <td>6.72*10<sup>24</sup></td>
-      <td>9.95*10<sup>26</sup></td>
-      <td>9.96*10<sup>30</sup></td>
-    </tr>
-    <tr>
-      <td><em>n</em></td>
-      <td>10<sup>6</sup></td>
-      <td>6*10<sup>7</sup></td>
-      <td>3.6*10<sup>9</sup></td>
-      <td>8.64*10<sup>10</sup></td>
-      <td>2.6*10<sup>12</sup></td>
-      <td>3.15*10<sup>13</sup></td>
-      <td>3.15*10<sup>15</sup></td>
-    </tr>
-    <tr>
-      <td><em>n</em> lg <em>n</em></td>
-      <td>62,746</td>
-      <td>2,801,417</td>
-      <td>133,378,058</td>
-      <td>2,755,147,513</td>
-      <td>71,870,856,404</td>
-      <td>797,633,893,349</td>
-      <td>68,610,956,750,570</td>
-    </tr>
-    <tr>
-      <td>n<sup>2</sup></td>
-      <td>1,000</td>
-      <td>7,745</td>
-      <td>60,000</td>
-      <td>293,398</td>
-      <td>1,609,968</td>
-      <td>5,615,692</td>
-      <td>56,156,922</td>
-    </tr>
-    <tr>
-      <td>n<sup>3</sup></td>
-      <td>100</td>
-      <td>391</td>
-      <td>1,532</td>
-      <td>4,420</td>
-      <td>13,736</td>
-      <td>31,593</td>
-      <td>146,645</td>
-    </tr>
-    <tr>
-      <td>2<sup><em>n</em></sup></td>
-      <td>19</td>
-      <td>25</td>
-      <td>31</td>
-      <td>36</td>
-      <td>41</td>
-      <td>44</td>
-      <td>51</td>
-    </tr>
-    <tr>
-      <td><em>n</em>!</td>
-      <td>9</td>
-      <td>11</td>
-      <td>12</td>
-      <td>13</td>
-      <td>15</td>
-      <td>16</td>
-      <td>17</td>
-    </tr>
-  </tbody>
-</table>
+<script type="math/tex; mode=display">% <![CDATA[
+\newcommand\T{\Rule{0pt}{1em}{.3em}}
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline & \textrm{1 second} & \textrm{1 minute} & \textrm{1 hour} & \textrm{1 day} & \textrm{1 month} & \textrm{1 year} & \textrm{1 century} \\\hline
+  \lg n \T & 2^{10^6} \T & 2^{6 \cdot 10^7} \T & 2^{3.6 \cdot 10^9} \T & 2^{8.64 \cdot 10^{10}} \T & 2^{2.59 \cdot 10^{12}} \T & 2^{3.15 \cdot 10^{13}} \T & 2^{3.15 \cdot 10^{15}} \\\hline
+  \sqrt{n} \T & 10^{12} \T & 3.6 \cdot 10^{15} \T & 1.3 \cdot 10^{19} \T & 7.47 \cdot 10^{21} \T & 6.72 \cdot 10^{24} \T & 9.95 \cdot 10^{26} \T & 9.96 \cdot 10^{30} \\\hline
+  n \T & 10^6 \T & 6 \cdot 10^7 \T & 3.6 \cdot 10^9 \T & 8.64 \cdot 10^{10} \T & 2.6 \cdot 10^{12} \T & 3.15 \cdot 10^{13} \T & 3.15 \cdot 10^{15} \\\hline
+  n \lg n \T & 62,746 \T & 2,801,417 \T & 133,378,058 \T & 2,755,147,513 \T & 71,870,856,404 \T & 797,633,893,349 \T & 68,610,956,750,570 \\\hline
+  n^2 \T & 1,000 \T & 7,745 \T & 60,000 \T & 293,398 \T & 1,609,968 \T & 5,615,692 \T & 56,156,922 \\\hline
+  n^3 \T & 100 \T & 391 \T & 1,532 \T & 4,420 \T & 13,736 \T & 31,593 \T & 146,645 \\\hline
+  2^n \T & 19 \T & 25 \T & 31 \T & 36 \T & 41 \T & 44 \T & 51 \\\hline
+  n! \T & 9 \T & 11 \T & 12 \T & 13 \T & 15 \T & 16 \T & 17 \\\hline
+\end{array} %]]></script>
 
 <p><strong>running_time_compare.py</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">math</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
 
 
 <span class="k">def</span> <span class="nf">generate_time_array</span><span class="p">():</span>
@@ -261,8 +180,8 @@
 
 <span class="k">print</span><span class="p">(</span><span class="s">"n!"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time_array_names</span><span class="p">)):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">time_array_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s">": "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n_factorial</span><span class="p">(</span><span class="n">time_array</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
-</code></pre></div></div>
+    <span class="k">print</span><span class="p">(</span><span class="n">time_array_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s">": "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n_factorial</span><span class="p">(</span><span class="n">time_array</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span></code></pre></figure>
+
 
       </div>
     </main>

@@ -47,13 +47,15 @@
     <main role="main" class="clrs-solution container">
       <h2>Exercise 1.2-3</h2>
       <div class="clrs-solution">
-        <p><strong>What is the smallest value of n such that an algorithm whose running time is 100<em>n</em><sup>2</sup> runs faster than an algorithm whose running time is 2<sup>n</sup> on the same machine?</strong></p>
+        <blockquote>
+  <p>What is the smallest value of n such that an algorithm whose running time is <script type="math/tex">100n^2</script> runs faster than an algorithm whose running time is <script type="math/tex">2n</script> on the same machine?</p>
+</blockquote>
 
-<p>I wrote <code class="highlighter-rouge">algorithm_compare.py</code> to calculate that the lowest value of <em>n</em> that satisfies this condition is 15.</p>
+<p>I wrote <code class="highlighter-rouge">algorithm_compare.py</code> to calculate that the lowest value of <script type="math/tex">n</script> that satisfies this condition is 15.</p>
 
 <p><strong>algorithm_compare.py:</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">run_time_01</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">run_time_01</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">n</span> <span class="o">**</span> <span class="mi">2</span>
 
 
@@ -67,8 +69,7 @@
         <span class="k">print</span><span class="p">(</span><span class="s">"Lowest value of n is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
         <span class="k">break</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
-</code></pre></div></div>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span></code></pre></figure>
 
       </div>
     </main>

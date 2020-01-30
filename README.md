@@ -5,7 +5,7 @@
 - Bootstrap
 - Fontawesome
 - jQuery
-- Mathjax
+- MathJax
 - Rouge
 
 ## Breadcrumbs
