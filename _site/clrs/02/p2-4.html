@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Exercise 2.3-2</title>
+	<title>Problem 2-4 Inversions</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
@@ -45,13 +45,38 @@
   </ul>
 </nav>
     <main role="main" class="clrs-solution container">
-      <h2>Exercise 2.3-2</h2>
+      <h2>Problem 2-4 Inversions</h2>
       <div class="clrs-solution">
         <blockquote>
-  <p>Rewrite the MERGE procedure so that it does not use sentinels, instead stopping once either array <script type="math/tex">L</script> or <script type="math/tex">R</script> has had all its elements copied back to <script type="math/tex">A</script> and then copying the remainder of the other array back into <script type="math/tex">A</script>.</p>
+  <p>Let <script type="math/tex">A[1..n]</script> be an array of <script type="math/tex">n</script> distinct numbers. If <script type="math/tex">% <![CDATA[
+i < j %]]></script> and <script type="math/tex">A[i] > A[j]</script>, then the pair <script type="math/tex">(i, j)</script> is called an <strong><em>inversion</em></strong> of <script type="math/tex">A</script>.</p>
 </blockquote>
 
-<p>MERGE-SORT (A, p, q, r)</p>
+<blockquote>
+  <p><strong><em>a.</em></strong> List the five inversions of the array <script type="math/tex">\{2, 3, 8, 6, 1\}</script>.</p>
+</blockquote>
+
+<script type="math/tex; mode=display">(1, 5), (2, 5), (3, 4), (3, 5), (4, 5)</script>
+
+<blockquote>
+  <p><strong><em>b.</em></strong> What array with elements from the set <script type="math/tex">\{1, 2,...,n\}</script> has the most inversions? How many does it have?</p>
+</blockquote>
+
+<p>The array <script type="math/tex">\{n, n-1,...,1\}</script> has <script type="math/tex">\sum\limits_{i=1}^{n-1}n</script> inversions.</p>
+
+<blockquote>
+  <p><strong><em>c.</em></strong> What is the relationship between the running time of insertion sort and the number of inversions in the input array? Justify your answer.</p>
+</blockquote>
+
+<p>Considering INSERTION-SORT as presented on page 26, the actions within the <strong>while</strong> loop on lines 5-7 will be taken a number of times equal to the amount of inversions in the input array <script type="math/tex">A</script>. This means that the number of inversions is a constant factor of the running time of INSERITON-SORT.</p>
+
+<blockquote>
+  <p><strong><em>d.</em></strong> Give an algorithm that determines the number of inversions in any permutation on <script type="math/tex">n</script> elements in $$\Theta(n \lg n ) worst-case time. (<em>Hint</em>: Modify merge sort.)</p>
+</blockquote>
+
+<p>Modify the MERGE procedure to count every time we select a value from the <script type="math/tex">R</script> array. Every time this happens we increase the count by <script type="math/tex">1 + i + j - 2</script> which counts the number of elements that are to the left in the array that is being worked with. There may potentially be additional elements to the left in other iterations of the array, but do not determine if they are smaller than the element in question at this point in time. Any remaining elements to the left are eventually considered during future swaps.</p>
+
+<p>INVERSION-MERGE(A, p, q, r)</p>
 
 <p>01 <code class="highlighter-rouge">n₁ = q - p + 1</code></p>
 
@@ -83,19 +108,23 @@
 
 <p>15          <code class="highlighter-rouge">A[k] = R[j]</code></p>
 
-<p>16          <code class="highlighter-rouge">j = j + 1</code></p>
+<p>16          <code class="highlighter-rouge">inversions += 1 + i + j - 2</code></p>
 
-<p>17      <code class="highlighter-rouge">else if L[i] ≤ R[j]</code></p>
+<p>17          <code class="highlighter-rouge">j = j + 1</code></p>
 
-<p>18          <code class="highlighter-rouge">A[k] = L[i]</code></p>
+<p>18      <code class="highlighter-rouge">else if L[i] ≤ R[j]</code></p>
 
-<p>19          <code class="highlighter-rouge">i = i + 1</code></p>
+<p>19          <code class="highlighter-rouge">A[k] = L[i]</code></p>
 
-<p>20      <code class="highlighter-rouge">else</code></p>
+<p>20          <code class="highlighter-rouge">i = i + 1</code></p>
 
-<p>21          <code class="highlighter-rouge">A[k] = R[j]</code></p>
+<p>21      <code class="highlighter-rouge">else</code></p>
 
-<p>22          <code class="highlighter-rouge">j = j + 1</code></p>
+<p>22          <code class="highlighter-rouge">A[k] = R[j]</code></p>
+
+<p>23          <code class="highlighter-rouge">inversions += 1 + i + j - 2</code></p>
+
+<p>24          <code class="highlighter-rouge">j = j + 1</code></p>
 
       </div>
     </main>
