@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Problem 2-2 Correctness of bubble sort</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+	<!-- stylesheets and javascripts -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="/assets/css/styles.css">
+	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+	<script src="https://kit.fontawesome.com/3dfeca0aaa.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+  <body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+  <span class="navbar-brand mb-0 h1">Don R Walsh</span>
+  <ul class="nav navbar-nav nav-flex-icons ml-auto">
+    
+      <li class="nav-item ">
+        <a class="nav-link" href="/">
+          <i class="fas fa-home"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block"> Home</span>
+        </a>
+      </li>
+    
+      <li class="nav-item ">
+        <a class="nav-link" href="/about.html">
+          <i class="fas fa-address-card"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block"> About</span>
+        </a>
+      </li>
+    
+      <li class="nav-item ">
+        <a class="nav-link" href="/clrs.html">
+          <i class="fas fa-graduation-cap"></i>
+          <span class="nav-span clearfix d-none d-sm-inline-block"> CLRS</span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+    <main role="main" class="clrs-solution container">
+      <h2>Problem 2-2 Correctness of bubble sort</h2>
+      <div class="clrs-solution">
+        <blockquote>
+  <p>Bubblesort is a popular, but inefficient, sorting algorithm. It works by repeatedly swapping adjacent elements that are out of order.</p>
+
+  <p>BUBBLESORT(A)</p>
+
+  <p>1 <code class="highlighter-rouge">for i = 1 to A.length - 1</code></p>
+
+  <p>2     <code class="highlighter-rouge">for j = A.length downto i + 1</code></p>
+
+  <p>3          <code class="highlighter-rouge">if A[j] &lt; A[j-1]</code></p>
+
+  <p>4              <code class="highlighter-rouge">exchange A[j] with A[j-1]</code></p>
+</blockquote>
+
+<blockquote>
+  <p><strong><em>a.</em></strong> Let <script type="math/tex">A'</script> denote the output of BUBBLESORT(A). To prove that BUBBLESORT is correct, we need to prove that it terminates and that</p>
+
+  <p><script type="math/tex">A'[1] \leq A'[2] \leq \cdots \leq A'[n]</script>,</p>
+
+  <p>where <script type="math/tex">n = A.length</script>. In order to show that BUBBLESORT actually sorts, what else do we need to prove?</p>
+</blockquote>
+
+<p>We must prove that <script type="math/tex">A'</script> is comprised of the same elements from our input <script type="math/tex">A</script>.</p>
+
+<blockquote>
+  <p><strong><em>b.</em></strong> State precisely a loop invariant for the <strong>for</strong> loop in lines 2-4, and prove that this loop invariant holds. Your proof should use the structure of the loop invariant proof presented in this chapter.</p>
+</blockquote>
+
+<p>At the start of each iteration of the <strong>for</strong> loop of lines 2-4, the subarray <script type="math/tex">A[j..n]</script> consists of the elements originally in <script type="math/tex">A[j..n]</script>, but in a different order such that <script type="math/tex">A[j]</script> is the smallest value.</p>
+
+<p><strong>Initialization</strong>: Before the first loop iteration, <script type="math/tex">A[j..n] = A[n]</script> which is in fact the original element in <script type="math/tex">A[n]</script>. <script type="math/tex">A[n]</script> is trivially the smallest value since it is a single-valued array.</p>
+
+<p><strong>Maintenance</strong>: The body of the <strong>for</strong> loop works by comparing <script type="math/tex">A[j]</script> and <script type="math/tex">A[j-1]</script>. <script type="math/tex">A[j-1]</script> is then made to be the smallest value of the two compared values, and then our array is expanded by 1 value on the left side. This new value(<script type="math/tex">A[j-1]</script>) is guaranteed to be the smallest value of the array, therefore decrementing <script type="math/tex">j</script> for the next iteration of the <strong>for</strong> loop preserves the loop invariant.</p>
+
+<p><strong>Termination</strong>: The loop terminates once <script type="math/tex">j = i</script>. At this point, we have compared all values of <script type="math/tex">A[i, n]</script> so then <script type="math/tex">A[i]</script> is the smallest value among them and <script type="math/tex">A[i..n]</script> consists of all elements originally in <script type="math/tex">A[i..n]</script> before starting the loop.</p>
+
+<blockquote>
+  <p><strong><em>c.</em></strong> Using the termination condition of the loop invariant proved in part (b), state a loop invariant for the <strong>for</strong> loop in lines 1-4 that will allow you to prove the above inequality. Your proof should use the structure of the loop invariant proof presented in this chapter.</p>
+</blockquote>
+
+<p>At the start of each iteration of the <strong>for</strong> loop of lines 1-4, the subarray <script type="math/tex">A[1..i-1]</script> consists of the smallest <script type="math/tex">i-1</script> elements originally in <script type="math/tex">A[1..n]</script>, but in sorted order. <script type="math/tex">A[i..n]</script> contains the remaining <script type="math/tex">n - i + 1</script> largest elements of <script type="math/tex">A</script>.</p>
+
+<p><strong>Initialization</strong>: Before the first loop iteration, <script type="math/tex">A[1..i-1]</script> is empty and therefore <script type="math/tex">A[i..n]</script> contains all elements originally in <script type="math/tex">A</script>, which are all (trivially) greater than our empty array.</p>
+
+<p><strong>Maintenance</strong>: Our <strong>for</strong> loop on lines 2-4 executes once, ultimately resulting in the smallest element of <script type="math/tex">A</script> shifting into position <script type="math/tex">A[i]</script>. <script type="math/tex">A[1..i-1]</script> is now one element larger, with the smallest element of <script type="math/tex">A[i..n]</script> in position <script type="math/tex">A[i]</script>. After the execution of this loop, <script type="math/tex">A[1..i]</script> consists of all elements smaller than our remainder array <script type="math/tex">A[i+1..n]</script> in sorted order.</p>
+
+<p><strong>Termination</strong>: The loop terminates when <script type="math/tex">i = n</script> at which point the array <script type="math/tex">A[1..n]</script> consists of all elements originally in <script type="math/tex">A</script> in sorted order.</p>
+
+<blockquote>
+  <p><strong><em>d.</em></strong> What is the worst-case running time of bubblesort? How does it compare to the running time of insertion sort?</p>
+</blockquote>
+
+<p>The combination of both <strong>for</strong> loops is effectively an arithmetic series: <script type="math/tex">\sum_{k=2}^{n} k</script> which results in a worst-case running time of <script type="math/tex">\Theta (n^2)</script>, the same as INSERTION-SORT. Due to the structure of BUBBLE-SORT, the best-case running time is also <script type="math/tex">\Theta (n^2)</script> since we always perform the same number of comparisons. This sets it apart from INSERTION-SORT which has a  <script type="math/tex">\Theta (n)</script> best-case running time.</p>
+
+      </div>
+    </main>
+  </body>
+</html>
