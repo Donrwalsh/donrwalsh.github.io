@@ -74,7 +74,7 @@ i < j %]]></script> and <script type="math/tex">A[i] > A[j]</script>, then the p
   <p><strong><em>d.</em></strong> Give an algorithm that determines the number of inversions in any permutation on <script type="math/tex">n</script> elements in $$\Theta(n \lg n ) worst-case time. (<em>Hint</em>: Modify merge sort.)</p>
 </blockquote>
 
-<p>Modify the MERGE procedure to count every time we select a value from the <script type="math/tex">R</script> array. Every time this happens we increase the count by <script type="math/tex">1 + i + j - 2</script> which counts the number of elements that are to the left in the array that is being worked with. There may potentially be additional elements to the left in other iterations of the array, but do not determine if they are smaller than the element in question at this point in time. Any remaining elements to the left are eventually considered during future swaps.</p>
+<p>Modify the MERGE procedure to count inversions every time we select a value from the <script type="math/tex">R</script> array. Selecting a value from the <script type="math/tex">R</script> array indicates that all remaining values in the <script type="math/tex">L</script> array are greater than our selected value thus each element in the <script type="math/tex">L</script> array at the time of selection represents an inversion. Since the overall size of <script type="math/tex">L</script> is <script type="math/tex">n₁</script>, and the position of the currently ‘showing’ value on the <script type="math/tex">L</script> array is <script type="math/tex">i</script>, the number of remaining elements at the time of selection is <script type="math/tex">n₁ - i + 1</script>. Lines 16 and 23 of INVERSION-MERGE below represent the points where we select a value from the <script type="math/tex">R</script> array, and so that is where we record our inversion counts.</p>
 
 <p>INVERSION-MERGE(A, p, q, r)</p>
 
@@ -108,7 +108,7 @@ i < j %]]></script> and <script type="math/tex">A[i] > A[j]</script>, then the p
 
 <p>15          <code class="highlighter-rouge">A[k] = R[j]</code></p>
 
-<p>16          <code class="highlighter-rouge">inversions += 1 + i + j - 2</code></p>
+<p>16          <code class="highlighter-rouge">inversions += n₁ - i + 1</code></p>
 
 <p>17          <code class="highlighter-rouge">j = j + 1</code></p>
 
@@ -122,7 +122,7 @@ i < j %]]></script> and <script type="math/tex">A[i] > A[j]</script>, then the p
 
 <p>22          <code class="highlighter-rouge">A[k] = R[j]</code></p>
 
-<p>23          <code class="highlighter-rouge">inversions += 1 + i + j - 2</code></p>
+<p>23          <code class="highlighter-rouge">inversions += n₁ - i + 1</code></p>
 
 <p>24          <code class="highlighter-rouge">j = j + 1</code></p>
 
