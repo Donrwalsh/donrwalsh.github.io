@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Exercise 3.1-3</title>
+	<title>Exercise 3.1-4</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
@@ -45,14 +45,27 @@
   </ul>
 </nav>
     <main role="main" class="clrs-solution container">
-      <h2>Exercise 3.1-3</h2>
+      <h2>Exercise 3.1-4</h2>
       <div class="clrs-solution">
         <blockquote>
-  <p>Explain why the statement, “The running time of algorithm <script type="math/tex">A</script> is at least <script type="math/tex">O(n^2)</script>,” is meaningless.</p>
+  <p>Is <script type="math/tex">2^{n+1} = O(2^n)</script>?</p>
 </blockquote>
 
-<p><script type="math/tex">T(n)</script> is the running time of algorithm <script type="math/tex">A</script>. The statement above is saying that <script type="math/tex">T(n) \geq O(n^2)</script> which does not tell us enough to specify the upper-bound of <script type="math/tex">T(n)</script>. Furthermore, even if the statement were more specific and told us that <script type="math/tex">A = O(n^2)</script> that still wouldn’t be enough to determine the lower-bound of <script type="math/tex">T(n)</script> since it could be any function that grows slower than <script type="math/tex">n^2</script>. Ultimately this statement is describing an infinite set of functions and is therefore meaningless.</p>
+<p>In order for this statement to be true, it must be true that there exist positive constants <script type="math/tex">c</script> and <script type="math/tex">n_0</script> such that</p>
 
+<script type="math/tex; mode=display">0 \leq 2^{n+1} \leq c2^n \ \forall \ n > n_0</script>
+
+<p>By reducing this inequality it is apparent that selecting any <script type="math/tex">c \geq 2</script> will make this inequality hold for all <script type="math/tex">n > 0</script>. So the statement <script type="math/tex">2^{n+1} = O(2^n)</script> is true.</p>
+
+<blockquote>
+  <p>Is <script type="math/tex">2^{2n} = O(2^n)</script>?</p>
+</blockquote>
+
+<p>In order for this statement to be true, it must be true that there exist positive constants <script type="math/tex">c</script> and <script type="math/tex">n_0</script> such that</p>
+
+<script type="math/tex; mode=display">0 \leq 2^{2n} \leq c2^n \ \forall \ n > n_0</script>
+
+<p>Reducing this inequality yields <script type="math/tex">0 \leq 2^n \leq c</script>. We cannot choose a positive value for <script type="math/tex">c</script> that satisfies this inequality since <script type="math/tex">2^n</script> will eventually overtake any selected constant. So the statement <script type="math/tex">2^{2n} = O(2^n)</script> is false.</p>
 
       </div>
     </main>

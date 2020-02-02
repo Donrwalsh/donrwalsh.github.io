@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Exercise 3.1-3</title>
+	<title>Exercise 3.1-5</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
@@ -45,14 +45,27 @@
   </ul>
 </nav>
     <main role="main" class="clrs-solution container">
-      <h2>Exercise 3.1-3</h2>
+      <h2>Exercise 3.1-5</h2>
       <div class="clrs-solution">
         <blockquote>
-  <p>Explain why the statement, “The running time of algorithm <script type="math/tex">A</script> is at least <script type="math/tex">O(n^2)</script>,” is meaningless.</p>
+  <p>Prove Theorem 3.1 which states:</p>
+
+  <p>For any two functions <script type="math/tex">f(n)</script> and <script type="math/tex">g(n)</script>, we have <script type="math/tex">f(n) = \Theta(g(n))</script> if and only if <script type="math/tex">f(n) = O(g(n)</script>) and <script type="math/tex">f(n) = \Omega(g(n))</script>.</p>
 </blockquote>
 
-<p><script type="math/tex">T(n)</script> is the running time of algorithm <script type="math/tex">A</script>. The statement above is saying that <script type="math/tex">T(n) \geq O(n^2)</script> which does not tell us enough to specify the upper-bound of <script type="math/tex">T(n)</script>. Furthermore, even if the statement were more specific and told us that <script type="math/tex">A = O(n^2)</script> that still wouldn’t be enough to determine the lower-bound of <script type="math/tex">T(n)</script> since it could be any function that grows slower than <script type="math/tex">n^2</script>. Ultimately this statement is describing an infinite set of functions and is therefore meaningless.</p>
+<p>Suppose <script type="math/tex">f(n) = \Theta(g(n))</script>. Then, by definition there exist positive constants <script type="math/tex">c_1</script>, <script type="math/tex">c_2</script>, and <script type="math/tex">n_0</script> such that <script type="math/tex">0 \leq c_1g(n) \leq f(n) \leq c_2g(n) \ \forall \ n \geq n_0</script>. Due to the existence of <script type="math/tex">c_1</script> and <script type="math/tex">n_0</script>, it is true that <script type="math/tex">0 \leq c_1g(n) \leq f(n) \ \forall \ n \geq n_0 \implies f(n) = \Omega(g(n))</script>. Likewise the existence of <script type="math/tex">c_2</script> and <script type="math/tex">n_0</script> make it true that <script type="math/tex">0 \leq f(n) \leq c_2g(n) \ \forall \ n \geq n_0 \implies f(n) = O(g(n))</script>.</p>
 
+<p>That being said, the “if and only if” wording means we must also prove that the inverse holds as well.</p>
+
+<p>Suppose <script type="math/tex">f(n) = O(g(n))</script> and <script type="math/tex">f(n) = \Omega(g(n))</script>. Then, by definition there exist positive constants <script type="math/tex">c_a</script>, <script type="math/tex">c_b</script>, <script type="math/tex">n_{a}</script> and <script type="math/tex">n_{b}</script> such that:</p>
+
+<script type="math/tex; mode=display">0 \leq c_ag(n) \leq f(n) \ \forall \ n > n_a</script>
+
+<script type="math/tex; mode=display">0 \leq f(n) \leq c_bg(n) \ \forall \ n > n_b</script>
+
+<p>By setting <script type="math/tex">n_c = \max(n_a, n_b)</script> we can combine these two inequalities:</p>
+
+<script type="math/tex; mode=display">0 \leq c_ag(n) \leq f(n) \leq c_bg(n) \ \forall \ n > n_c \implies f(n) = \Theta(g(n))</script>
 
       </div>
     </main>
