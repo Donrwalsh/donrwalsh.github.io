@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Exercise 3.1-1</title>
+	<title>Exercise 3.1-2</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
@@ -45,25 +45,23 @@
   </ul>
 </nav>
     <main role="main" class="clrs-solution container">
-      <h2>Exercise 3.1-1</h2>
+      <h2>Exercise 3.1-2</h2>
       <div class="clrs-solution">
         <blockquote>
-  <p>Let <script type="math/tex">f(n)</script> and <script type="math/tex">g(n)</script> be asymptotically nonnegative functions. Using the basic definition of <script type="math/tex">\Theta</script>-notation, prove that <script type="math/tex">\max(f(n),g(n)) = \Theta(f(n) + g(n))</script>.</p>
+  <p>Show that for any real constants <script type="math/tex">a</script> and <script type="math/tex">b</script>, where <script type="math/tex">b > 0</script>,</p>
+
+  <p><script type="math/tex">(n + a)^b = \Theta(n^b)</script>.</p>
 </blockquote>
 
-<p><script type="math/tex">f(n)</script> and <script type="math/tex">g(n)</script> being asympototically nonnegative functions means that <script type="math/tex">0 \leq f(n)</script> and <script type="math/tex">0 \leq g(n)</script> which implies:</p>
+<p>By the Binomial Theorem, <script type="math/tex">(n + a)^b =  \sum\limits_{k=0}^{b}\binom{b}{k}n^{b-k}a{k} = C_{0}^{b}n^{b}a^0 + C_{1}^{b}n^{b-1}a^1 + \cdots + C_{b}^{b}n^{0}a^b</script>. In order to simplify further calculations, we want to restrict <script type="math/tex">n + a</script> to be non-negative which we can do by setting <script type="math/tex">n_0 \geq \lvert a \rvert</script>. With <script type="math/tex">n + a \geq 0</script> we know that:</p>
 
-<script type="math/tex; mode=display">0 \leq f(n) + g(n)</script>
+<script type="math/tex; mode=display">0 \leq C_{0}^{b}n^b \leq C_{0}^{b}n^{b}a^0 + C_{1}^{b}n^{b-1}a^1 + \cdots + C_{b}^{b}n^{0}a^b</script>
 
-<p>Taking the max of two integers results in one of those two values which gives us <script type="math/tex">f(n) \leq \max(f(n), g(n))</script> and <script type="math/tex">g(n) \leq \max(f(n), g(n))</script> and happens to imply <script type="math/tex">\frac{f(n) + g(n)}{2} \leq \max(f(n), g(n))</script>. We can combine this with our above inequality by first multiplying both sides by <script type="math/tex">\frac{1}{2}</script>:</p>
+<p>We are interested in values of <script type="math/tex">n</script> such that <script type="math/tex">n \geq n_0</script>, and since we know <script type="math/tex">n_0</script> is positive, we can use the fact that <script type="math/tex">C_{0}^{b}n^{b}a^0 + C_{1}^{b}n^{b-1}a^1 + \cdots + C_{b}^{b}n^{0}a^b \leq (C_{0}^{b} + C_{1}^{b} + \cdots + C_{b}^{b})n^b</script> to construct another step in our inequality:</p>
 
-<script type="math/tex; mode=display">0 \leq \frac{f(n) + g(n)}{2} \leq \max(f(n), g(n))</script>
+<script type="math/tex; mode=display">0 \leq C_{0}^{b}n^b \leq C_{0}^{b}n^{b}a^0 + C_{1}^{b}n^{b-1}a^1 + \cdots + C_{b}^{b}n^{0}a^b \leq (C_{0}^{b} + C_{1}^{b} + \cdots + C_{b}^{b})n^b</script>
 
-<p>Lastly, <script type="math/tex">\max(f(n), g(n))</script> is always less than or equal to the sum of its two terms (since we know they are not negative). This tells us <script type="math/tex">\max(f(n), g(n)) \leq f(n) + g(n)</script>. This gives us the following inequality:</p>
-
-<script type="math/tex; mode=display">0 \leq \frac{f(n) + g(n)}{2} \leq \max(f(n), g(n)) \leq f(n) + g(n)</script>
-
-<p>Which is the definition of <script type="math/tex">\Theta</script>-notation with <script type="math/tex">c_1 = \frac{1}{2}</script> and <script type="math/tex">c_2 = 1</script>.</p>
+<p>Which is the definition of <script type="math/tex">\Theta(n^b)</script> with <script type="math/tex">c_1 = C_{0}^{b} = 1</script>, <script type="math/tex">c_2 = C_{0}^{b} + C_{1}^{b} + \cdots + C_{b}^{b}</script> and <script type="math/tex">n_0 \geq \lvert a \rvert</script>.</p>
 
       </div>
     </main>
