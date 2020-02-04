@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Problem 2-2 Correctness of bubble sort</title>
+	<title>Problem 2-2</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
@@ -44,10 +44,34 @@
     
   </ul>
 </nav>
-    <main role="main" class="clrs-solution container">
-      <h2>Problem 2-2 Correctness of bubble sort</h2>
-      <div class="clrs-solution">
-        <blockquote>
+    <main role="main" class="clrs-solution container">      
+      
+      
+      <div class="row">
+        <div class="prev col-1 col-md-3">
+          
+            <a href="/clrs/02/p2-1.html" class="prev">
+              <i class="fas fa-arrow-left"></i>
+              <span class="d-none d-md-inline">Problem 2-1</span>
+            </a>
+                              
+        </div>
+        <div class="col-10 col-md-6 title"><h2>Problem 2-2</h2></div>
+        <div class="next col-1 col-md-3">
+          
+            <a href="/clrs/02/p2-3.html">
+              <span class="d-none d-md-inline">Problem 2-3</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          
+        </div>
+      </div>
+    
+    
+      <h3 class="title"> Correctness of bubble sort</h3>
+    
+    <div class="clrs-solution">
+      <blockquote>
   <p>Bubblesort is a popular, but inefficient, sorting algorithm. It works by repeatedly swapping adjacent elements that are out of order.</p>
 
   <p>BUBBLESORT(A)</p>
@@ -101,7 +125,7 @@
 
 <p>The combination of both <strong>for</strong> loops is effectively an arithmetic series:  <script type="math/tex">\sum\limits_{k=2}^{n}k</script> which results in a worst-case running time of <script type="math/tex">\Theta (n^2)</script>, the same as INSERTION-SORT. Due to the structure of BUBBLE-SORT, the best-case running time is also <script type="math/tex">\Theta (n^2)</script> since we always perform the same number of comparisons. This sets it apart from INSERTION-SORT which has a  <script type="math/tex">\Theta (n)</script> best-case running time.</p>
 
-      </div>
-    </main>
-  </body>
+    </div>
+  </main>
+</body>
 </html>

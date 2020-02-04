@@ -44,10 +44,32 @@
     
   </ul>
 </nav>
-    <main role="main" class="clrs-solution container">
-      <h2>Exercise 2.3-4</h2>
-      <div class="clrs-solution">
-        <blockquote>
+    <main role="main" class="clrs-solution container">      
+      
+      
+      <div class="row">
+        <div class="prev col-1 col-md-3">
+          
+            <a href="/clrs/02/e2.3-3.html" class="prev">
+              <i class="fas fa-arrow-left"></i>
+              <span class="d-none d-md-inline">Exercise 2.3-3</span>
+            </a>
+                              
+        </div>
+        <div class="col-10 col-md-6 title"><h2>Exercise 2.3-4</h2></div>
+        <div class="next col-1 col-md-3">
+          
+            <a href="/clrs/02/e2.3-5.html">
+              <span class="d-none d-md-inline">Exercise 2.3-5</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          
+        </div>
+      </div>
+    
+    
+    <div class="clrs-solution">
+      <blockquote>
   <p>We can express insertion sort as a recursive procedure as follows. In order to sort <script type="math/tex">A[1..n]</script>, we recursively sort <script type="math/tex">A[1..n-1]</script> and then insert <script type="math/tex">A[n]</script> into the sorted array <script type="math/tex">A[1..n-1]</script>. Write a recurrence for the worst-case running time of this recursive version of insertion sort.</p>
 </blockquote>
 
@@ -60,7 +82,7 @@ T(n) =
     T(n-1) + \Theta(n) & \text{if $n>1$} \\
   \end{cases} %]]></script>
 
-      </div>
-    </main>
-  </body>
+    </div>
+  </main>
+</body>
 </html>

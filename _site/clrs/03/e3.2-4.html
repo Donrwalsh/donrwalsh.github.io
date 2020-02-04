@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Exercise 2.1-1</title>
+	<title>Exercise 3.2-4</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
@@ -50,19 +50,14 @@
       <div class="row">
         <div class="prev col-1 col-md-3">
           
-            <a href="/clrs/01/p1-1.html" class="prev">
+            <a href="/clrs/03/e3.2-3.html" class="prev">
               <i class="fas fa-arrow-left"></i>
-              <span class="d-none d-md-inline">Problem 1-1</span>
+              <span class="d-none d-md-inline">Exercise 3.2-3</span>
             </a>
                               
         </div>
-        <div class="col-10 col-md-6 title"><h2>Exercise 2.1-1</h2></div>
+        <div class="col-10 col-md-6 title"><h2>Exercise 3.2-4</h2></div>
         <div class="next col-1 col-md-3">
-          
-            <a href="/clrs/02/e2.1-2.html">
-              <span class="d-none d-md-inline">Exercise 2.1-2</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
           
         </div>
       </div>
@@ -70,27 +65,8 @@
     
     <div class="clrs-solution">
       <blockquote>
-  <p>Using Figure 2.2 as a model, illustrate the operation of INSERTION-SORT on the array <script type="math/tex">A = \langle 31, 41, 59, 26, 41, 58 \rangle</script>.</p>
+  <p>Is the function <script type="math/tex">\lceil \lg n \rceil !</script> polynomially bounded? Is the function <script type="math/tex">\lceil \lg \lg n \rceil!</script> polynomailly bounded?</p>
 </blockquote>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\newcommand\T{\Rule{0pt}{1em}{.3em}}
-\begin{array}{|c|c|c|c|c|c|c|}
-\hline \textrm{Step} & \textrm{1} & \textrm{2} & \textrm{3} & \textrm{4} & \textrm{5} & \textrm{6} \\\hline
- \T & 31 \T & 41 \T & 59 \T & 26 \T & 41 \T & 58 \\\hline
-1  \\\hline
- \T & \textbf{31} \T & \underline{\textbf{41}} \T & 59 \T & 26 \T & 41 \T & 58 \\\hline
-2  \\\hline
- \T & \textbf{31} \T & \textbf{41} \T & \underline{\textbf{59}} \T & 26 \T & 41 \T & 58 \\\hline
-3 \T & 	← \T & 	← \T & 	← \T & 	←  \\\hline
- \T & \underline{\textbf{26}} \T & \textbf{31} \T & \textbf{41} \T & \textbf{59} \T & 41 \T & 58 \\\hline
-4 \T &  \T &  \T & 	← \T & 	← \T & 	← \\\hline
- \T & \textbf{26} \T & \textbf{31} \T & \underline{\textbf{41}} \T & \textbf{41} \T & \textbf{59} \T & 58 \\\hline
-5 \T &  \T &  \T &  \T &  \T & 	← \T & 	← \\\hline
-\T & \textbf{26} \T & \textbf{31} \T & \textbf{41} \T & \textbf{41} \T & \underline{\textbf{58}} \T & \textbf{59} \\\hline
-\end{array} %]]></script>
-
-<p>The idea here is that the step rows are indicating what action occurs in the row beneath them. Left-pointing arrows demonstrate that an underlined number has been moved to a new position, and by following these arrows you can map an array element from its original position to its new destination.</p>
 
     </div>
   </main>

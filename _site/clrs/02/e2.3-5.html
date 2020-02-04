@@ -44,10 +44,32 @@
     
   </ul>
 </nav>
-    <main role="main" class="clrs-solution container">
-      <h2>Exercise 2.3-5</h2>
-      <div class="clrs-solution">
-        <blockquote>
+    <main role="main" class="clrs-solution container">      
+      
+      
+      <div class="row">
+        <div class="prev col-1 col-md-3">
+          
+            <a href="/clrs/02/e2.3-4.html" class="prev">
+              <i class="fas fa-arrow-left"></i>
+              <span class="d-none d-md-inline">Exercise 2.3-4</span>
+            </a>
+                              
+        </div>
+        <div class="col-10 col-md-6 title"><h2>Exercise 2.3-5</h2></div>
+        <div class="next col-1 col-md-3">
+          
+            <a href="/clrs/02/e2.3-6.html">
+              <span class="d-none d-md-inline">Exercise 2.3-6</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          
+        </div>
+      </div>
+    
+    
+    <div class="clrs-solution">
+      <blockquote>
   <p>Referring back to the searching problem (see Exercise 2.1-3), observe that if the sequence <script type="math/tex">A</script> is sorted, we can check the midpoint of the sequence against <script type="math/tex">v</script> and eliminate half of the sequence from further consideration. The <strong><em>binary search</em></strong> algorithm repeats this procedure, halving the size of the remaining portion of the sequence each time. Write pseudocode, either iterative or recursive, for binary search. Argue that the worst-case running time of binary search is <script type="math/tex">\Theta(\lg n)</script>.</p>
 </blockquote>
 
@@ -67,7 +89,7 @@
 
 <p>Intuitively, the worst-case scenrio for BINARY-SEARCH is when <script type="math/tex">v</script> does not exist in <script type="math/tex">A</script> at all. In which case we halve the array as many times as possible, which takes <script type="math/tex">\Theta(\lg n)</script>.</p>
 
-      </div>
-    </main>
-  </body>
+    </div>
+  </main>
+</body>
 </html>

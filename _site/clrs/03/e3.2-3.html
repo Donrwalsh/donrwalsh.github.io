@@ -44,10 +44,32 @@
     
   </ul>
 </nav>
-    <main role="main" class="clrs-solution container">
-      <h2>Exercise 3.2-3</h2>
-      <div class="clrs-solution">
-        <blockquote>
+    <main role="main" class="clrs-solution container">      
+      
+      
+      <div class="row">
+        <div class="prev col-1 col-md-3">
+          
+            <a href="/clrs/03/e3.2-2.html" class="prev">
+              <i class="fas fa-arrow-left"></i>
+              <span class="d-none d-md-inline">Exercise 3.2-2</span>
+            </a>
+                              
+        </div>
+        <div class="col-10 col-md-6 title"><h2>Exercise 3.2-3</h2></div>
+        <div class="next col-1 col-md-3">
+          
+            <a href="/clrs/03/e3.2-4.html">
+              <span class="d-none d-md-inline">Exercise 3.2-4</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          
+        </div>
+      </div>
+    
+    
+    <div class="clrs-solution">
+      <blockquote>
   <p>Prove <script type="math/tex">\lg(n!) = \Theta(n \lg n)</script>. Also prove that <script type="math/tex">n! = \omega(2^n)</script> and <script type="math/tex">n! = o(n^n)</script>.</p>
 </blockquote>
 
@@ -59,7 +81,7 @@
 n! & = \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n \left(1 + \Theta \left( \frac{1}{n} \right) \right) \\
 \lg(n!) & = \lg(\sqrt{2 \pi n}) + \lg \left( \left( \frac{n}{e} \right)^n \right) + \lg \left(1 + \Theta \left( \frac{1}{n} \right) \right) \\
 & =  \Theta(\sqrt{n}) + n \lg \left( \frac{n}{e} \right) + lg\left(\Theta(1) + \Theta \left(\frac{1}{n} \right) \right) \\
-& = \Theta(\sqrt{n}) + \Theta(n \lg n) + \Theta \left(\frac{1}{n} \right)\\
+& = \Theta(n) + \Theta(n \lg n) + \Theta \left(\frac{1}{n} \right)\\
 & = \Theta(n \lg n) \\
 \end{split}
 \end{equation} %]]></script>
@@ -70,7 +92,7 @@ n! & = \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n \left(1 + \Theta \left( \frac
 <p>In order to prove <script type="math/tex">n! = o(n^n)</script> we must show that for any positive constant <script type="math/tex">c > 0</script>, there exists a constant <script type="math/tex">n_0 > 0</script> such that <script type="math/tex">% <![CDATA[
 0 \leq n! < cn^n \ \forall \ n \geq n_0 %]]></script>. In order to satisfy this inequality, we must find the point at which <script type="math/tex">n^n</script> overtakes <script type="math/tex">n!</script> which occurs when <script type="math/tex">n \geq 2</script> so then by setting <script type="math/tex">n_0 = 2c</script> we conclude that <script type="math/tex">n! = o(n^n)</script>.</p>
 
-      </div>
-    </main>
-  </body>
+    </div>
+  </main>
+</body>
 </html>

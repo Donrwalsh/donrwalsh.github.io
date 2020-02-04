@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Problem 2-1 Insertion sort on small arrays in merge sort</title>
+	<title>Problem 2-1</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
@@ -44,10 +44,34 @@
     
   </ul>
 </nav>
-    <main role="main" class="clrs-solution container">
-      <h2>Problem 2-1 Insertion sort on small arrays in merge sort</h2>
-      <div class="clrs-solution">
-        <blockquote>
+    <main role="main" class="clrs-solution container">      
+      
+      
+      <div class="row">
+        <div class="prev col-1 col-md-3">
+          
+            <a href="/clrs/02/e2.3-7.html" class="prev">
+              <i class="fas fa-arrow-left"></i>
+              <span class="d-none d-md-inline">Exercise 2.3-7</span>
+            </a>
+                              
+        </div>
+        <div class="col-10 col-md-6 title"><h2>Problem 2-1</h2></div>
+        <div class="next col-1 col-md-3">
+          
+            <a href="/clrs/02/p2-2.html">
+              <span class="d-none d-md-inline">Problem 2-2</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          
+        </div>
+      </div>
+    
+    
+      <h3 class="title">Insertion sort on small arrays in merge sort</h3>
+    
+    <div class="clrs-solution">
+      <blockquote>
   <p>Although merge sort runs in <script type="math/tex">\Theta(n \lg n)</script> worst-case time and insertion sort runs in <script type="math/tex">\Theta(n^2)</script> worst-case time, the constant factors in insertion sort can make it faster in practice for small problem sizes on many machines. Thus, it makes sense to <strong><em>coarsen</em></strong> the leaves of the recursion by using insertion sort within merge sort when subproblems become sufficiently small. Consider a modification to merge sort in which <script type="math/tex">\frac{n}{k}</script> sublists of length <script type="math/tex">k</script> are sorted using insertion sort and then merged using the standard merging mechanism, where <script type="math/tex">k</script> is a value to be determined.</p>
 </blockquote>
 
@@ -75,7 +99,7 @@
 
 <p>Our chosen value for <script type="math/tex">k</script> should be the largest value in which running INSERTION-SORT on a list of length <script type="math/tex">k</script> takes less time than running MERGE-SORT on the same list. See <a href="/clrs/01/e1.2-2">Exercise 1.2-2</a>.</p>
 
-      </div>
-    </main>
-  </body>
+    </div>
+  </main>
+</body>
 </html>

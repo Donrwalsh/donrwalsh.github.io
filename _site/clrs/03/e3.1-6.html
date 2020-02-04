@@ -44,10 +44,32 @@
     
   </ul>
 </nav>
-    <main role="main" class="clrs-solution container">
-      <h2>Exercise 3.1-6</h2>
-      <div class="clrs-solution">
-        <blockquote>
+    <main role="main" class="clrs-solution container">      
+      
+      
+      <div class="row">
+        <div class="prev col-1 col-md-3">
+          
+            <a href="/clrs/03/e3.1-5.html" class="prev">
+              <i class="fas fa-arrow-left"></i>
+              <span class="d-none d-md-inline">Exercise 3.1-5</span>
+            </a>
+                              
+        </div>
+        <div class="col-10 col-md-6 title"><h2>Exercise 3.1-6</h2></div>
+        <div class="next col-1 col-md-3">
+          
+            <a href="/clrs/03/e3.1-7.html">
+              <span class="d-none d-md-inline">Exercise 3.1-7</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          
+        </div>
+      </div>
+    
+    
+    <div class="clrs-solution">
+      <blockquote>
   <p>Prove that the running time of an algorithm is <script type="math/tex">\Theta(g(n))</script> if and only if its worst-case running time is <script type="math/tex">O(g(n))</script> and its best-case running time is <script type="math/tex">\Omega(g(n))</script>.</p>
 </blockquote>
 
@@ -61,7 +83,7 @@
 
 <p>If we suppose instead that <script type="math/tex">f(n) = \Theta(g(n))</script> and that, say, <script type="math/tex">f_w(n) \neq O(g(n))</script> then we are saying that <script type="math/tex">f_w(n)</script> exceeds the upper-bound represented by <script type="math/tex">O(g(n))</script> which in turn implies that <script type="math/tex">f(n)</script> also exceeds the upper-bound represented by <script type="math/tex">\Theta(g(n))</script> since <script type="math/tex">f_w(n)</script> a possible run-time of <script type="math/tex">f(n)</script>. This is clearly a contradiction, and the same argument applies to making the claim that <script type="math/tex">f_b(n) \neq \Omega(g(n))</script>.</p>
 
-      </div>
-    </main>
-  </body>
+    </div>
+  </main>
+</body>
 </html>

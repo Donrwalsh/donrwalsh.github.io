@@ -44,17 +44,39 @@
     
   </ul>
 </nav>
-    <main role="main" class="clrs-solution container">
-      <h2>Exercise 3.1-3</h2>
-      <div class="clrs-solution">
-        <blockquote>
+    <main role="main" class="clrs-solution container">      
+      
+      
+      <div class="row">
+        <div class="prev col-1 col-md-3">
+          
+            <a href="/clrs/03/e3.1-2.html" class="prev">
+              <i class="fas fa-arrow-left"></i>
+              <span class="d-none d-md-inline">Exercise 3.1-2</span>
+            </a>
+                              
+        </div>
+        <div class="col-10 col-md-6 title"><h2>Exercise 3.1-3</h2></div>
+        <div class="next col-1 col-md-3">
+          
+            <a href="/clrs/03/e3.1-4.html">
+              <span class="d-none d-md-inline">Exercise 3.1-4</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          
+        </div>
+      </div>
+    
+    
+    <div class="clrs-solution">
+      <blockquote>
   <p>Explain why the statement, “The running time of algorithm <script type="math/tex">A</script> is at least <script type="math/tex">O(n^2)</script>,” is meaningless.</p>
 </blockquote>
 
 <p><script type="math/tex">T(n)</script> is the running time of algorithm <script type="math/tex">A</script>. The statement above is saying that <script type="math/tex">T(n) \geq O(n^2)</script> which does not tell us enough to specify the upper-bound of <script type="math/tex">T(n)</script>. Furthermore, even if the statement were more specific and told us that <script type="math/tex">A = O(n^2)</script> that still wouldn’t be enough to determine the lower-bound of <script type="math/tex">T(n)</script> since it could be any function that grows slower than <script type="math/tex">n^2</script>. Ultimately this statement is describing an infinite set of functions and is therefore meaningless.</p>
 
 
-      </div>
-    </main>
-  </body>
+    </div>
+  </main>
+</body>
 </html>

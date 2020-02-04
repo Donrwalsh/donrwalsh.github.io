@@ -6,6 +6,10 @@ blockquote { border-left: .25em solid #dfe2e5; color: #6a737d; padding: 0 1em; }
 
 .clrs-solution { padding-top: .5em; }
 
+.next { text-align: right; }
+
+.title { text-align: center; }
+
 .highlight .hll { background-color: #49483e; }
 
 .highlight { background: #272822; color: #f8f8f2; }
