@@ -39,3 +39,9 @@ It would be swell to share assets such as templates between different repos so I
 This looks cool for a readme template: https://github.com/othneildrew/Best-README-Template/blob/master/README.md
 
 Syntax highlighting: https://mycyberuniverse.com/syntax-highlighting-jekyll.html
+
+Matching with Github Pages:
+
+Add Gemfile with `bundle init`. Change version to match github.
+
+`bundle install` and then `bundle exec jekyll serve` to generate files the same way pages does.
