@@ -65,8 +65,47 @@
     
     <div class="clrs-solution">
       <blockquote>
-  <p>Is the function <script type="math/tex">\lceil \lg n \rceil !</script> polynomially bounded? Is the function <script type="math/tex">\lceil \lg \lg n \rceil!</script> polynomailly bounded?</p>
+  <p>Is the function <script type="math/tex">\lceil \lg n \rceil !</script> polynomially bounded? Is the function <script type="math/tex">\lceil \lg \lg n \rceil!</script> polynomially bounded?</p>
 </blockquote>
+
+<p>A function <script type="math/tex">f(n)</script> is <strong><em>polynomially bounded</em></strong> if <script type="math/tex">f(n) = O(n^k)</script> for some constant <script type="math/tex">k</script>, in other words: if there exists some positive constants <script type="math/tex">c</script> and <script type="math/tex">n_0</script> such that:</p>
+
+<script type="math/tex; mode=display">0 \leq \lceil \lg n \rceil ! \leq cn^k \ \forall \ n \geq n_0</script>
+
+<p>In other words:</p>
+
+<script type="math/tex; mode=display">0 \leq \lg (\lceil \lg n \rceil !) \leq \lg c + k \lg n \ \forall \ n \geq n_0</script>
+
+<p>So if we can show that <script type="math/tex">\lg f(n)) = O(\lg n)</script>, then we have shown that <script type="math/tex">f(n)</script> is polynomially bounded.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\begin{split}
+\lg (\lceil \lg n \rceil !) & = \Theta(\lceil \lg n \rceil \lg( \lceil \lg n \rceil)) \\
+& = \Theta(\lg n \lg \lg n ) \\
+& = \omega(\lg n) \\
+& \neq O(\lg n) \\
+\end{split}
+\end{equation} %]]></script>
+
+<p>We know from the last exercise that <script type="math/tex">\lg n ! = \Theta(n \lg n)</script> which lets us set the initial state of the above equation. Next, we perform simplification based on the fact that <script type="math/tex">% <![CDATA[
+n \leq \lceil n \rceil < n + 1 \ \forall \ n \in \mathbb{R} \implies \lceil \lg n \rceil = \Theta(\lg n) %]]></script>. Finally, for <script type="math/tex">n > 4</script>, <script type="math/tex">\lg n \lg \lg n > \lg n</script> which implies that <script type="math/tex">\lg (\lceil \lg n \rceil !) \neq O(\lg n)</script>, therefore <script type="math/tex">\lceil \lg n \rceil !</script> is not polynomially bounded.</p>
+
+<p>As for <script type="math/tex">\lceil \lg \lg n \rceil !</script> we can use the same approach:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\begin{split}
+\lg ( \lceil \lg \lg n \rceil!) & = \Theta(\lceil \lg \lg n \rceil \lg \lceil \lg \lg n \rceil) \\
+& = \Theta(\lg \lg n \lg \lg \lg n) \\
+& = o(\lg \lg n \lg \lg n) \\
+& = o(\lg^2 n) \\
+& = o(\lg n) \\ 
+& = O(\lg n)
+\end{split}
+\end{equation} %]]></script>
+
+<p>There is some cleverness behind the transformation of <script type="math/tex">\Theta(\lg \lg n \lg \lg \lg n)</script> into <script type="math/tex">o(\lg \lg n \lg \lg n)</script>. Suppose <script type="math/tex">x = \lg \lg n</script>, then the transformation looks like: <script type="math/tex">\Theta(x \lg x) = o(x^2)</script> which is to say that <script type="math/tex">x^2</script> grows faster than <script type="math/tex">x \lg x</script> which is plain to see. The final step utilizes the identity <script type="math/tex">\lg^bn = o(n^a)</script>. We therefore conclude that <script type="math/tex">\lceil \lg \lg n \rceil !</script> is polynomially bounded.</p>
 
     </div>
   </main>
