@@ -1,11 +1,7 @@
 - name: Home
   link: /
   icon: home
-
-- name: About
-  link: /about.html
-  icon: address-card
   
 - name: CLRS
-  link: /clrs.html
+  link: /CLRS
   icon: graduation-cap
