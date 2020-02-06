@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Exercise 3.2-5</title>
+	<title>Exercise 3.2-6</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
@@ -50,19 +50,14 @@
       <div class="row">
         <div class="prev col-1 col-md-3">
           
-            <a href="/clrs/03/e3.2-4.html" class="prev">
+            <a href="/clrs/03/e3.2-5.html" class="prev">
               <i class="fas fa-arrow-left"></i>
-              <span class="d-none d-md-inline">Exercise 3.2-4</span>
+              <span class="d-none d-md-inline">Exercise 3.2-5</span>
             </a>
                               
         </div>
-        <div class="col-10 col-md-6 title"><h2>Exercise 3.2-5</h2></div>
+        <div class="col-10 col-md-6 title"><h2>Exercise 3.2-6</h2></div>
         <div class="next col-1 col-md-3">
-          
-            <a href="/clrs/03/e3.2-6.html">
-              <span class="d-none d-md-inline">Exercise 3.2-6</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
           
         </div>
       </div>
@@ -70,12 +65,34 @@
     
     <div class="clrs-solution">
       <blockquote>
-  <p>Which is asymptotically larger: <script type="math/tex">\lg(\lg^* n)</script> or <script type="math/tex">\lg^*(\lg n)</script>?</p>
+  <p>Show that the golden ratio <script type="math/tex">\phi</script> and its conjugate <script type="math/tex">\hat{\phi}</script> both satisfy the equation <script type="math/tex">x^2 = x + 1</script>.</p>
 </blockquote>
 
-<p>Setting <script type="math/tex">x = \lg^* n</script> gives us <script type="math/tex">\lg(\lg^* n) = \lg x</script>. It also gives us <script type="math/tex">\lg^*(\lg n) = x - 1</script> because the inner logarithm of <script type="math/tex">\lg^*(\lg n)</script> reduces the output of the iterated logarithm by 1.</p>
+<p>Because <script type="math/tex">\phi = \frac{1 + \sqrt{5}}{2}</script>:</p>
 
-<p>Because <script type="math/tex">x - 1</script> is asymptotically larger than <script type="math/tex">\lg(x)</script>, <script type="math/tex">\lg^*(\lg n)</script> is also asymptotically larger than <script type="math/tex">\lg(\lg^* n)</script>.</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\begin{split}
+\phi^2 & = \left( \frac{1 + \sqrt{5}}{2} \right)^2 \\
+& = \frac{1 + 2 \sqrt{5} + 5}{4} \\
+& = \frac{3 + \sqrt{5}}{2} \\
+& = \frac{1 + \sqrt{5}}{2} + 1 \\
+& = \phi + 1
+\end{split}
+\end{equation} %]]></script>
+
+<p>And then because <script type="math/tex">\hat{\phi} = \frac{1 - \sqrt{5}}{2}</script>:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\begin{split}
+\hat{\phi^2} & = \left( \frac{1 - \sqrt{5}}{2} \right)^2 \\
+& = \frac{1 - 2\sqrt{5} + 5}{2} \\
+& = \frac{3 - \sqrt{5}}{2} \\
+& = \frac{1 - \sqrt{5}}{2} + 1 \\
+& = \hat{\phi} + 1 
+\end{split}
+\end{equation} %]]></script>
 
     </div>
   </main>
