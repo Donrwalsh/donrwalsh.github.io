@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Exercise 3.2-6</title>
+	<title>Exercise 3.2-7</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
@@ -50,19 +50,14 @@
       <div class="row">
         <div class="prev col-1 col-md-3">
           
-            <a href="/clrs/03/e3.2-5.html" class="prev">
+            <a href="/clrs/03/e3.2-6.html" class="prev">
               <i class="fas fa-arrow-left"></i>
-              <span class="d-none d-md-inline">Exercise 3.2-5</span>
+              <span class="d-none d-md-inline">Exercise 3.2-6</span>
             </a>
                               
         </div>
-        <div class="col-10 col-md-6 title"><h2>Exercise 3.2-6</h2></div>
+        <div class="col-10 col-md-6 title"><h2>Exercise 3.2-7</h2></div>
         <div class="next col-1 col-md-3">
-          
-            <a href="/clrs/03/e3.2-7.html">
-              <span class="d-none d-md-inline">Exercise 3.2-7</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
           
         </div>
       </div>
@@ -70,32 +65,29 @@
     
     <div class="clrs-solution">
       <blockquote>
-  <p>Show that the golden ratio <script type="math/tex">\phi</script> and its conjugate <script type="math/tex">\hat{\phi}</script> both satisfy the equation <script type="math/tex">x^2 = x + 1</script>.</p>
+  <p>Prove by induction that the <script type="math/tex">i</script>th Fibonacci number satisfies the equality</p>
+
+  <p><script type="math/tex">F_i = \frac{\phi^i - \hat{\phi^i}}{\sqrt{5}}</script>,</p>
+
+  <p>where <script type="math/tex">\phi</script> is the golden ratio and <script type="math/tex">\hat{\phi}</script> is its conjugate.</p>
 </blockquote>
 
-<p>Because <script type="math/tex">\phi = \frac{1 + \sqrt{5}}{2}</script>:</p>
+<p>For our base case, we need two values of <script type="math/tex">F</script>:</p>
+
+<script type="math/tex; mode=display">F_0 = \frac{\phi^0 - \hat{\phi^0}}{\sqrt{5}} = \frac{1 - 1}{\sqrt{5}} = 0</script>
+
+<script type="math/tex; mode=display">F_1 = \frac{\phi^1 - \hat{\phi^1}}{\sqrt{5}} = \frac{\frac{1 + \sqrt{5}}{2} - \frac{1 - \sqrt{5}}{2}}{\sqrt{5}} = \frac{1 + \sqrt{5} - 1 + \sqrt{5}}{2\sqrt{5}} = \frac{2\sqrt{5}}{2\sqrt{5}} = 1</script>
+
+<p>For the inductive step, recall that <script type="math/tex">F_i = F_{i-1} + F_{i-2}</script> for <script type="math/tex">i \geq 2</script>:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{equation}
 \begin{split}
-\phi^2 & = \left( \frac{1 + \sqrt{5}}{2} \right)^2 \\
-& = \frac{1 + 2 \sqrt{5} + 5}{4} \\
-& = \frac{3 + \sqrt{5}}{2} \\
-& = \frac{1 + \sqrt{5}}{2} + 1 \\
-& = \phi + 1
-\end{split}
-\end{equation} %]]></script>
-
-<p>And then because <script type="math/tex">\hat{\phi} = \frac{1 - \sqrt{5}}{2}</script>:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{equation}
-\begin{split}
-\hat{\phi^2} & = \left( \frac{1 - \sqrt{5}}{2} \right)^2 \\
-& = \frac{1 - 2\sqrt{5} + 5}{2} \\
-& = \frac{3 - \sqrt{5}}{2} \\
-& = \frac{1 - \sqrt{5}}{2} + 1 \\
-& = \hat{\phi} + 1 
+F_i & = \frac{\phi^{i-1} - \hat{\phi}{}^{i-1}}{\sqrt{5}} + \frac{\phi^{i-2} - \hat{\phi}{}^{i-2}}{\sqrt{5}} \\
+& = \frac{\phi^{i-1} + \phi^{i-2} - \hat{\phi}{}^{i-1} - \hat{\phi}{}^{i-2}}{\sqrt{5}} \\
+& = \frac{\phi^{i-2}(\phi + 1) - \hat{\phi}{}^{i-2}(\hat{\phi} + 1)}{\sqrt{5}} \\
+& = \frac{\phi^{i-2}\phi^2  - \hat{\phi}{}^{i-2}\hat{\phi}{}^{2}}{\sqrt{5}} \\
+& = \frac{\phi^i  - \hat{\phi}{}^i}{\sqrt{5}} \\
 \end{split}
 \end{equation} %]]></script>
 
