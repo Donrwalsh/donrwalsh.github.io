@@ -1,7 +1,11 @@
 - name: Home
-  link: /
+  link: https://donrwalsh.github.io
   icon: home
   
 - name: CLRS
-  link: /CLRS
+  link: /CLRS/
   icon: graduation-cap
+
+- name: LeetCode
+  link: /LeetCode/
+  icon: laptop-code
