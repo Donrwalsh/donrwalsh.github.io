@@ -78,3 +78,16 @@ main {
   display: block;
   width: 50%;
 }
+
+#hub-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#percent-container {
+  text-align: center;
+}
+
+#percent {
+  width: 100%;
+}
