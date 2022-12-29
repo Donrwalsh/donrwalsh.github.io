@@ -1,2 +1,7 @@
 # Google Analytics
 google_analytics_id: "UA-160627836-1"
+
+collections:
+  posts:
+    output: true
+    permalink: /blog/:name
