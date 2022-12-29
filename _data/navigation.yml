@@ -3,7 +3,7 @@
   icon: home
   
 - name: Blog
-  link: /blog.html
+  link: /blog
   icon: bullhorn
 
 - name: CLRS
