@@ -45,3 +45,5 @@ Matching with Github Pages:
 Add Gemfile with `bundle init`. Change version to match github.
 
 `bundle install` and then `bundle exec jekyll serve` to generate files the same way pages does.
+
+Use the `--drafts` command-line argument to be able to review drafts locally.
