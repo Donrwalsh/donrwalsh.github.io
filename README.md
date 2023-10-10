@@ -1,5 +1,11 @@
 # donrwalsh.github.io
 
+## TODO:
+
+- This readme is a bit of a mess and could stand to be organized better.
+  - (this includes callouts to the other repos that are related to this one which to the best of my knowledge is not managed anywhere except in my memory.)
+- Establish Restore Terminals on this project (figure out how to get the code into the repo too)
+
 ## Includes
 
 - Bootstrap
@@ -65,3 +71,13 @@ I want RVM to make this easier: https://rvm.io/rvm/install. Oook, so this is a q
 Cool, so now I'm getting a failure to find some file/directory when I try to run any `bundle` commands. https://www.jessesquires.com/blog/2020/11/28/how-to-fix-ruby-bundler-errors-on-nearlyfreespeech/ Seems that bundler is still referencing the old version of Ruby after the upgrade. Makes sense. So I re-ran `>gem install bundler` and then the `>bundle install` followed by `>bundle exec jekyll serve` and we are running!
 
 So overall, I needed to install the right version of Ruby (2.7.8-1-x64) and then run `>bundle install` followed by `>bundle exec jekyll serve` and boom. So that means the stuff above about adding `rexml` and `webrick` appears to be unimportant and so I've removed them. Ahh, I bet that I'll find instructions on how to deal with this in a different repo since this is the one that doesn't really get any action.
+
+Minor thing: An even better command to run is `RUBYOPT='W0' bundle exec jekyll serve` which suppresses the constant warning messages about using the `last` argument as keyword parameters is deprecated. I believe this warning message is at the language level because I only use that as a keyword in one place and that's over on the CLRS side of things, so I suspect trying to 'resolve' this isn't going to do much at all.
+
+## Environment Differences
+
+So I'm working in this space right now because it's an obvious QoL in my face that I can hit the ground running on. I'm dropping notes here because this readme is kinda just a running stream of consciousness right now and will need to be tidied later. So actually, let's make a todo for that. Cool, added a TODO section.
+
+Ok, so env differences. First off, there is no visual difference between dev and prod. So I changed the banner color when we are working with a local environment to make it very obvious. Another thing is that the links are standardized which means they always point to the prod version of things (because that's how I arranged it). This is an easy fix, and the environment that the app is running on is easily apparent and checkable, so I added some logic to switch which link is being used based on that environment.
+
+In order for the link switching to work, I need to run things locally a little different. For example, I am running both the core donrwalsh.github.io and CLRS locally right now using the current run command which is `RUBYOPT="W0" bundle exec jekyll serve` and it is the same for both. This means that both apps are running on port 4000, which technically shouldn't be a problem because despite this there are no overlaps in URLs. Even so, only the first one that is running will actually show up locally. Unclear why local can't map to a single port when prod does it just fine, but that's alright because with what I'm working on here I can simply establish a slightly different running pattern for locally by assigning ports to each of the sub-repos and having the local dev server map to those locations rather than the prod locations (or an equivalent construction of a URL based on prod principles). I will probably set this workspace up with restore terminals to better take advantage of these growing run commands.
