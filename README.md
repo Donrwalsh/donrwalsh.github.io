@@ -4,7 +4,6 @@
 
 - This readme is a bit of a mess and could stand to be organized better.
   - (this includes callouts to the other repos that are related to this one which to the best of my knowledge is not managed anywhere except in my memory.)
-- Establish Restore Terminals on this project (figure out how to get the code into the repo too)
 
 ## Includes
 
@@ -81,3 +80,9 @@ So I'm working in this space right now because it's an obvious QoL in my face th
 Ok, so env differences. First off, there is no visual difference between dev and prod. So I changed the banner color when we are working with a local environment to make it very obvious. Another thing is that the links are standardized which means they always point to the prod version of things (because that's how I arranged it). This is an easy fix, and the environment that the app is running on is easily apparent and checkable, so I added some logic to switch which link is being used based on that environment.
 
 In order for the link switching to work, I need to run things locally a little different. For example, I am running both the core donrwalsh.github.io and CLRS locally right now using the current run command which is `RUBYOPT="W0" bundle exec jekyll serve` and it is the same for both. This means that both apps are running on port 4000, which technically shouldn't be a problem because despite this there are no overlaps in URLs. Even so, only the first one that is running will actually show up locally. Unclear why local can't map to a single port when prod does it just fine, but that's alright because with what I'm working on here I can simply establish a slightly different running pattern for locally by assigning ports to each of the sub-repos and having the local dev server map to those locations rather than the prod locations (or an equivalent construction of a URL based on prod principles). I will probably set this workspace up with restore terminals to better take advantage of these growing run commands.
+
+### Restore Terminals
+
+This ended up being a bit of a hassle. The instructions (https://marketplace.visualstudio.com/items?itemName=EthanSK.restore-terminals) are detailed, but there is a big gap in my opinion on the specificity of what actually needs to happen. The settings themselves go in a configuration file, which in normal circumstances should be available in the `.vscode` directory, but that doesn't exist for a workspace. I know from experience that the settings go in the workspace file, but there's no indication that this is even possible just based on the quick intro and then complete absence of content around this plugin. Indeed, VScode has a native way of doing this now, but I'm stubborn and am going to work this.
+
+Anyway, it wound up being that I need to prefix the addition of these settings in the workspace file with a `"settings":` so that it is clear that what I'm listing off are settings and not something else. I also had to append `restoreTerminals.~` to the RT-specific settings. This seems to work just fine, and I was even able to move the workspace file into the repo itself and get it working. The CWD of the commands that are run via the file is based on the location of the workspace file itself, so moving it inside the donrwalsh.github.io repo means that the commands (and folder paths, for that matter) needed to be updated in kind.

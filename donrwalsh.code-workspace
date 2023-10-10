@@ -1,0 +1,42 @@
+{
+  "folders": [
+    {
+      "path": "../CCI"
+    },
+    {
+      "path": "../CLRS"
+    },
+    {
+      "path": "./"
+    }
+  ],
+  "settings": {
+    "restoreTerminals.artificialDelayMilliseconds": 700,
+    "restoreTerminals.keepExistingTerminalsOpen": false,
+    "restoreTerminals.runOnStartup": true,
+    "restoreTerminals.terminals": [
+      {
+        "splitTerminals": [
+          {
+            "name": "main",
+            "commands": ["RUBYOPT='W0' bundle exec jekyll serve --port 4000"]
+          },
+          {
+            "name": "clrs",
+            "commands": [
+              "cd ../CLRS/",
+              "RUBYOPT='W0' bundle exec jekyll serve --port 4001"
+            ]
+          },
+          {
+            "name": "cci",
+            "commands": [
+              "cd ../CCI/",
+              "RUBYOPT='W0' bundle exec jekyll serve --port 4002"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
