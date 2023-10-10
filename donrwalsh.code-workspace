@@ -19,7 +19,10 @@
         "splitTerminals": [
           {
             "name": "main",
-            "commands": ["RUBYOPT='W0' bundle exec jekyll serve --port 4000"]
+            "commands": [
+              "cd ../donrwalsh.github.io",
+              "RUBYOPT='W0' bundle exec jekyll serve --port 4000"
+            ]
           },
           {
             "name": "clrs",
