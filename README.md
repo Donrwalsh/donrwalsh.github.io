@@ -8,7 +8,7 @@
 ## Includes
 
 - Bootstrap
-- Fontawesome
+- Bootstrap icons
 - jQuery
 - MathJax
 - Rouge
@@ -86,3 +86,7 @@ In order for the link switching to work, I need to run things locally a little d
 This ended up being a bit of a hassle. The instructions (https://marketplace.visualstudio.com/items?itemName=EthanSK.restore-terminals) are detailed, but there is a big gap in my opinion on the specificity of what actually needs to happen. The settings themselves go in a configuration file, which in normal circumstances should be available in the `.vscode` directory, but that doesn't exist for a workspace. I know from experience that the settings go in the workspace file, but there's no indication that this is even possible just based on the quick intro and then complete absence of content around this plugin. Indeed, VScode has a native way of doing this now, but I'm stubborn and am going to work this.
 
 Anyway, it wound up being that I need to prefix the addition of these settings in the workspace file with a `"settings":` so that it is clear that what I'm listing off are settings and not something else. I also had to append `restoreTerminals.~` to the RT-specific settings. This seems to work just fine, and I was even able to move the workspace file into the repo itself and get it working. The CWD of the commands that are run via the file is based on the location of the workspace file itself, so moving it inside the donrwalsh.github.io repo means that the commands (and folder paths, for that matter) needed to be updated in kind.
+
+### Fontawesome -> Bootstrap Icons
+
+For the past two months, I've been getting warning emails from fontawesome that I'm reaching some limit on the free account that I have with them. Based on the analytics I setup, this site gets a steady stream of traffic and I want my visitors to see icons every time. Managing a subscription for (admittedly great) icons is a bit too involved for my tastes, so I decided to switch to Bootstrap Icons which I've had success with on a separate project. I was able to do a nearly one-to-one transition with this, save for the goodreads icon which bootstrap doesn't recognize for whatever reason. I went with a generic book instead and do not plan to lose any sleep on this. Otherwise, I believe I have eradicated all presence of fontawesome in this project and will be keeping my eyes peeled for anything I missed.
