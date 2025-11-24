@@ -12,6 +12,14 @@ Consider shifting around format? I still like the overall structure that I'm usi
 
 Start with a technology inventory for each job, should be a good way to get the ball rolling!
 
+### 11/24/25
+
+To start with I'm going to make a `resume` folder. I've found it very useful to have this repo serve as a sort of quick-access for helpful files so I'm going to continue that and expand it a bit. The existing `resume source` folder goes away and moves to my new folder. I store the font files here because on fresh machines OpenOffice needs them, so they get their own folder. Then I made `sources` for my resume source files, of which there is one. On the frontend the only resume-related thing that gets exposed is the pdf itself which I haven't touched yet.
+
+I don't think I'll be using the original resume for much longer, but I want to at least make a few changes to it right now. Specifically adding back months to the date ranges and adjusting the location to be Brooklyn Center. Ah yes, I'm also missing Cogency Global from this resume so I'm going to add that now. Musn't forget to extend the red lines to match the new date lengths!
+
+Ah yes, Open Office crashes every time I try to export to pdf. I remember that I need to use print to pdf to get it to work for some reason. With that, I'm going to replace the top level resume.pdf with my latest and commit these updates. That change should be the only impactful change, everything else is just tidying.
+
 # donrwalsh.github.io
 
 ## TODO:
