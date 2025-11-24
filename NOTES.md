@@ -1,3 +1,17 @@
+## Resume
+
+I aim to improve upon how I manage my resume.
+
+I created a new page for this, aptly named resume. I won't advertise it yet, but it's available at /resume. It should just say 'resume' for now.
+
+The plan is to link multiple resumes here. Split on frontend, backend and leadership to start. Have three different easily accessible resumes available for download depending on the role I'm looking for at the time.
+
+How best to catalogue and store reminders for work done in the past? Spend some time going through hand-written notes to capture important items that I can't recall.
+
+Consider shifting around format? I still like the overall structure that I'm using right now.
+
+Start with a technology inventory for each job, should be a good way to get the ball rolling!
+
 # donrwalsh.github.io
 
 ## TODO:
