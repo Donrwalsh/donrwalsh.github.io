@@ -20,6 +20,12 @@ I don't think I'll be using the original resume for much longer, but I want to a
 
 Ah yes, Open Office crashes every time I try to export to pdf. I remember that I need to use print to pdf to get it to work for some reason. With that, I'm going to replace the top level resume.pdf with my latest and commit these updates. That change should be the only impactful change, everything else is just tidying.
 
+Watching the automated build stuff makes me think I should write up how that works at some point during this process. Note that the printed pdf carries the filename of the source file that it printed from. (visible in the online pdf viewer and likely different than the actual file name that is being shown)
+
+Alright, let's tear it apart. I'm going to focus on the left-hand sidebar. I like the Education section and I don't think I want to change a thing about it right now. But the Technical Experience section is a mess. Actually I think I want to do this in a separate file.
+
+So I took a stab at listing out all of my tech experience by tech and then bullet-point listing each of the jobs or projects that I used the tech on. This is a good start, and I thought of a better way to arrange the data on my resume so I made an update with that in mind. Now I'm grouping tech in 3 buckets: 5+ yoe, 2-5 yoe and <2 yoe. I like it better than the big pile of languages so I'm gonna roll with that for the time being.
+
 # donrwalsh.github.io
 
 ## TODO:
