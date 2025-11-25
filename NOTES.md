@@ -26,20 +26,14 @@ Alright, let's tear it apart. I'm going to focus on the left-hand sidebar. I lik
 
 So I took a stab at listing out all of my tech experience by tech and then bullet-point listing each of the jobs or projects that I used the tech on. This is a good start, and I thought of a better way to arrange the data on my resume so I made an update with that in mind. Now I'm grouping tech in 3 buckets: 5+ yoe, 2-5 yoe and <2 yoe. I like it better than the big pile of languages so I'm gonna roll with that for the time being.
 
+I'm having this pretty cool idea for how to rearrange the homepage of my site. I'm imagining a timeline-focused version of my tech experience. Also some Testimonials would be pretty cool. I'm going to plan to add these but in order to make them pretty it feels necessary to upgrade Bootstrap since I'm pretty far behind there. I worked a bit today on getting Bootstrap up to 5.3 for this project and I believe I've gotten the main issues handled, especially since this project is pretty much just a single page.
+
 # donrwalsh.github.io
 
 ## TODO:
 
 - This readme is a bit of a mess and could stand to be organized better.
   - (this includes callouts to the other repos that are related to this one which to the best of my knowledge is not managed anywhere except in my memory.)
-
-## Includes
-
-- Bootstrap
-- Bootstrap icons
-- jQuery
-- MathJax
-- Rouge
 
 ## Breadcrumbs
 
@@ -114,7 +108,3 @@ In order for the link switching to work, I need to run things locally a little d
 This ended up being a bit of a hassle. The instructions (https://marketplace.visualstudio.com/items?itemName=EthanSK.restore-terminals) are detailed, but there is a big gap in my opinion on the specificity of what actually needs to happen. The settings themselves go in a configuration file, which in normal circumstances should be available in the `.vscode` directory, but that doesn't exist for a workspace. I know from experience that the settings go in the workspace file, but there's no indication that this is even possible just based on the quick intro and then complete absence of content around this plugin. Indeed, VScode has a native way of doing this now, but I'm stubborn and am going to work this.
 
 Anyway, it wound up being that I need to prefix the addition of these settings in the workspace file with a `"settings":` so that it is clear that what I'm listing off are settings and not something else. I also had to append `restoreTerminals.~` to the RT-specific settings. This seems to work just fine, and I was even able to move the workspace file into the repo itself and get it working. The CWD of the commands that are run via the file is based on the location of the workspace file itself, so moving it inside the donrwalsh.github.io repo means that the commands (and folder paths, for that matter) needed to be updated in kind.
-
-### Fontawesome -> Bootstrap Icons
-
-For the past two months, I've been getting warning emails from fontawesome that I'm reaching some limit on the free account that I have with them. Based on the analytics I setup, this site gets a steady stream of traffic and I want my visitors to see icons every time. Managing a subscription for (admittedly great) icons is a bit too involved for my tastes, so I decided to switch to Bootstrap Icons which I've had success with on a separate project. I was able to do a nearly one-to-one transition with this, save for the goodreads icon which bootstrap doesn't recognize for whatever reason. I went with a generic book instead and do not plan to lose any sleep on this. Otherwise, I believe I have eradicated all presence of fontawesome in this project and will be keeping my eyes peeled for anything I missed.

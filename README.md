@@ -2,8 +2,25 @@
 
 This is my homepage. There are many like it, but this one is mine.
 
-I use it for a few specific purposes:
+## Connected Repos
 
-## Resume delivery mechanism
+More on this later...
+
+## Resume
 
 My current resume is available at https://donrwalsh.github.io/resume.pdf
+
+## Running Locally
+
+If you're interested, ...
+
+## Notes
+
+Built using Github Pages:
+
+- [Jekyll](https://jekyllrb.com/)
+- [Bootstrap v5.3](https://getbootstrap.com/)
+- [Bootstrap Icons](https://icons.getbootstrap.com/)
+- [MathJax](https://www.mathjax.org/) (_CLRS_)
+- [Rouge](https://github.com/rouge-ruby/rouge) (_CLRS_)
+- [jQuery](https://jquery.com/) (_CLRS_)
