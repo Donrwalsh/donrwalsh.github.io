@@ -28,6 +28,12 @@ So I took a stab at listing out all of my tech experience by tech and then bulle
 
 I'm having this pretty cool idea for how to rearrange the homepage of my site. I'm imagining a timeline-focused version of my tech experience. Also some Testimonials would be pretty cool. I'm going to plan to add these but in order to make them pretty it feels necessary to upgrade Bootstrap since I'm pretty far behind there. I worked a bit today on getting Bootstrap up to 5.3 for this project and I believe I've gotten the main issues handled, especially since this project is pretty much just a single page.
 
+### 11/25/25
+
+Today I'm going to work on the timeline. I have a few ideas of how this might look, but mostly I want to get some copy in place to replace the existing copy that has been on my homepage for years now. It's so outdated! What I'm thinking is to work with 4 different regions. I'll probably use the resume placeholder page for this. Though, I should rename that.
+
+Alrighty, so I made a new page `timeline.html` and I put in some sections with the headers that I chose. I'm not the biggest fan of using accordions, but I figure this is a good spot to place some copy as I come up with it. I spent a little time tweaking the core accordion structure so it is something that I'm happy to leave as is and work on. I think I'll commit this for now and pivot to the favicon because I'm not the biggest fan of the green smiley face anymore. . .
+
 # donrwalsh.github.io
 
 ## TODO:

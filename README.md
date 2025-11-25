@@ -4,7 +4,7 @@ This is my homepage. There are many like it, but this one is mine.
 
 ## Connected Repos
 
-More on this later...
+More on this later... (including which content is shared)
 
 ## Resume
 
