@@ -6,8 +6,9 @@ first %}
 >
   <div class="container-fluid">
     <a
+      class="navbar-brand mb-0 h1"
       href="{% if jekyll.environment == 'development' %} {{home.dev-link}} {% else %} {{home.link}} {% endif %}"
-      ><span class="navbar-brand mb-0 h1">Don R Walsh</span></a
+      >Don R Walsh</a
     >
     {% if jekyll.environment == 'development' %}
     <strong style="margin: auto" class="d-none d-xs-block">DEVELOPMENT</strong>
