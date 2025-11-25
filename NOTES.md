@@ -42,6 +42,8 @@ I've had that turtle image on my homepage for years but I always felt a little o
 
 I badly want to rip out my copy on the homepage since it is so outdated, but I'm going to leave it there for now with a note describing how outdated it is. That'll do nicely for now I think. I enhanced some styling while I was at it.
 
+Spacing on the page and with the icons was a little wonky. I adjusted it by switching back to just using `.container` rather than `.container-fluid`
+
 # donrwalsh.github.io
 
 ## TODO:
