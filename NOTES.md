@@ -34,6 +34,10 @@ Today I'm going to work on the timeline. I have a few ideas of how this might lo
 
 Alrighty, so I made a new page `timeline.html` and I put in some sections with the headers that I chose. I'm not the biggest fan of using accordions, but I figure this is a good spot to place some copy as I come up with it. I spent a little time tweaking the core accordion structure so it is something that I'm happy to leave as is and work on. I think I'll commit this for now and pivot to the favicon because I'm not the biggest fan of the green smiley face anymore. . .
 
+Ooh, so I think I'm going to use the cross-stitch I made since it's a circular image anyway and it's something that means a lot to me. It's just a favicon anyway, so doubtful that people will notice it all that much. Could be fun to do some sort of callout on what it is when it comes up anyway.
+
+To make it, I started with the image from my google photos and opened it in Paint. It's pretty simple to remove the background as Paint provides a button that does just that. From there I needed to save it as a .png (specifically going into Layers and removing the white background layer that was showing instead of transparency) and then I used an online converter that spits out a handful of favicon files. I generally only use the `.ico` file but I'm curious what all these other files are for. I don't think I'll fuss with that much right now since I can easily retrace these steps at a later time.
+
 # donrwalsh.github.io
 
 ## TODO:
