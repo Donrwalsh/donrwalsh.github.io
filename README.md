@@ -21,6 +21,7 @@ Built using Github Pages:
 - [Jekyll](https://jekyllrb.com/)
 - [Bootstrap v5.3](https://getbootstrap.com/)
 - [Bootstrap Icons](https://icons.getbootstrap.com/)
+- [Github Actions](https://github.com/features/actions)
 - [MathJax](https://www.mathjax.org/) (_CLRS_)
 - [Rouge](https://github.com/rouge-ruby/rouge) (_CLRS_)
 - [jQuery](https://jquery.com/) (_CLRS_)

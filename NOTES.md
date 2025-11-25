@@ -38,6 +38,10 @@ Ooh, so I think I'm going to use the cross-stitch I made since it's a circular i
 
 To make it, I started with the image from my google photos and opened it in Paint. It's pretty simple to remove the background as Paint provides a button that does just that. From there I needed to save it as a .png (specifically going into Layers and removing the white background layer that was showing instead of transparency) and then I used an online converter that spits out a handful of favicon files. I generally only use the `.ico` file but I'm curious what all these other files are for. I don't think I'll fuss with that much right now since I can easily retrace these steps at a later time.
 
+I've had that turtle image on my homepage for years but I always felt a little odd about it. I ripped it from Wikipedia (I think) and didn't put much thought into it. After swapping around my favicon I figure that this is also a good opportunity to change that picture, so I swapped it out with the cross-stitch mountains too. Honestly, that feels like a really nice thing to have as the first image many people see when looking me up.
+
+I badly want to rip out my copy on the homepage since it is so outdated, but I'm going to leave it there for now with a note describing how outdated it is. That'll do nicely for now I think. I enhanced some styling while I was at it.
+
 # donrwalsh.github.io
 
 ## TODO:
