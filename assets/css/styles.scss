@@ -1,7 +1,12 @@
 ---
 ---
 
+#doing-this-to-suppress-unnecessary-css-lcurly-expected-linting-error {
+  display: none;
+}
+
 @import "main";
+@import "clrs";
 @import "monokai";
 @import "accordion";
 @import "quotes";

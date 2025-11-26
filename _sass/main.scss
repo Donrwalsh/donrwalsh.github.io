@@ -1,30 +1,15 @@
-//General
-
-.header {
-  position: fixed;
-  width: 100%;
-  z-index: 999;
+main {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
-.navbar-nav {
-  flex-direction: row;
-}
-
-.nav-item {
-  padding: 0rem, 0.5rem;
-}
-
-.nav-link {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.nav-span {
-  padding-left: 5px;
-}
-
-.title {
-  text-align: center;
+#mountains {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 25%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .footer {
@@ -44,86 +29,31 @@
   text-decoration: none;
 }
 
-//Home
-
-#mountains {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  width: 25%;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-//Other
-
-.card-header {
-  text-align: center;
-}
-
-blockquote {
-  border-left: 0.25em solid #dfe2e5;
-  color: #6a737d;
-  padding: 0 1em;
-}
-
-.clrs-solution {
-  padding-top: 0.5em;
-}
-
-.next {
-  text-align: right;
-}
-
-.randomAssignment {
-  text-align: center;
-}
-
-main {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.highlight {
-  padding-left: 10px;
-  padding-top: 5px;
-}
-
-.clrs-incomplete {
-  font-style: italic;
-  color: grey;
-}
-
-.clrs-link {
-  text-align: center;
-}
-
-.latex-img {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-
-.language-latex {
-  color: #e83e8c;
-}
-
-.desmos-img {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  width: 50%;
-}
-
-#hub-container {
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-#percent-container {
-  text-align: center;
-}
-
-#percent {
+.header {
+  position: fixed;
   width: 100%;
+  z-index: 999;
 }
+
+.nav-item {
+  padding: 0rem, 0.5rem;
+}
+
+.nav-link {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.nav-span {
+  padding-left: 5px;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.title {
+  text-align: center;
+}
+
+//Home

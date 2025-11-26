@@ -46,10 +46,14 @@ Spacing on the page and with the icons was a little wonky. I adjusted it by swit
 
 Spent a little time on playing around with a quote block. I'm not sure where they go yet, but I have this idea in my brain of having quotes scattered throughout the site of testimonials about me, sort of a 'soft-reference' kind of thing. I haven't sourced any quotes, except I do have one that I plan to include as decoration amongst all the professional ones. Played around a bit with having an image, but I'm not sure that's a great idea. In any case, I put some styling together for the quote and I moved it into its own file since I'm not sold on this being perm just yet. Reminds me that the styling scheme I have setup shares `main.scss` with CLRS but not other ones. Nope, nevermind it pulls everything in haha. So I guess I don't need to worry too much about breaking everything out? I might just do that next since it's bothering me how weirdly the styling is arranged.
 
+### 11/26/25
+
+Woke up this morning by playing around with styling. I established a `clrs.scss` file since that's where a lot of the styling is used and it seemed helpful to break it out into its own file. I've still got `main.scss` for content that's structural or shared between the homepage and clrs and then `accordion.scss` and `quotes.scss` as isolated style files for stuff that I'm tinkering with. I suppressed the annoying lint rule that expects a left curly bracket in `styles.scss` by making a dummy style rule that does nothing but satisfies the requirement since I couldn't drum up a way to suppress it outright. I'm fine with this and it kills the annoying red squiggly in my IDE so that's swell. Added a quick note to the readme which satisfies the TODO, but mostly I just need more content in the README to feel satisfied about it.
+
 ## TODO:
 
-- [ ] Approach styling organization. Document how this is done in the README.
-- [ ] I'm getting an annoying syntax error on styles.scss but it's definitely valid. Could look into that?
+- [x] Approach styling organization. Document how this is done in the README.
+- [x] I'm getting an annoying syntax error on styles.scss but it's definitely valid. Could look into that?
 
 ## Stretch TODO:
 
