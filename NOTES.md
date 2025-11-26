@@ -44,12 +44,16 @@ I badly want to rip out my copy on the homepage since it is so outdated, but I'm
 
 Spacing on the page and with the icons was a little wonky. I adjusted it by switching back to just using `.container` rather than `.container-fluid`
 
-# donrwalsh.github.io
+Spent a little time on playing around with a quote block. I'm not sure where they go yet, but I have this idea in my brain of having quotes scattered throughout the site of testimonials about me, sort of a 'soft-reference' kind of thing. I haven't sourced any quotes, except I do have one that I plan to include as decoration amongst all the professional ones. Played around a bit with having an image, but I'm not sure that's a great idea. In any case, I put some styling together for the quote and I moved it into its own file since I'm not sold on this being perm just yet. Reminds me that the styling scheme I have setup shares `main.scss` with CLRS but not other ones. Nope, nevermind it pulls everything in haha. So I guess I don't need to worry too much about breaking everything out? I might just do that next since it's bothering me how weirdly the styling is arranged.
 
 ## TODO:
 
-- This readme is a bit of a mess and could stand to be organized better.
-  - (this includes callouts to the other repos that are related to this one which to the best of my knowledge is not managed anywhere except in my memory.)
+- [ ] Approach styling organization. Document how this is done in the README.
+- [ ] I'm getting an annoying syntax error on styles.scss but it's definitely valid. Could look into that?
+
+## Stretch TODO:
+
+- [ ] I set this workspace up a long time ago on this machine. Could be helpful to document all the pieces that go into it and make it easier to set up again. Containerized workspace? Maybe that's a bit much, but I at least have my laptop to consider.
 
 ## Breadcrumbs
 
