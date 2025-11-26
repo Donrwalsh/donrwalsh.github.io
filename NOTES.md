@@ -50,14 +50,20 @@ Spent a little time on playing around with a quote block. I'm not sure where the
 
 Woke up this morning by playing around with styling. I established a `clrs.scss` file since that's where a lot of the styling is used and it seemed helpful to break it out into its own file. I've still got `main.scss` for content that's structural or shared between the homepage and clrs and then `accordion.scss` and `quotes.scss` as isolated style files for stuff that I'm tinkering with. I suppressed the annoying lint rule that expects a left curly bracket in `styles.scss` by making a dummy style rule that does nothing but satisfies the requirement since I couldn't drum up a way to suppress it outright. I'm fine with this and it kills the annoying red squiggly in my IDE so that's swell. Added a quick note to the readme which satisfies the TODO, but mostly I just need more content in the README to feel satisfied about it.
 
+(Needed to do a brief update to CLRS github actions for it to run) I changed a class from camelCase to kebab-case and inadvertently broke the 'random assignment' functionality that I've got on the main CLRS page. I can fix this up, but it's still using jQuery which isn't really necessary in this day and age, so I think I'll play around with retaining that functionality without needing to pull in jQuery. I guess I'll first double-check to see if I'm using it anywhere else. . . Ok, score this is the only place. This seems worth working on but if I'm being really honest I'm just procrastinating on doing resume stuff haha.
+
+`random-assignment` is more appropriate as an id than a class. So I got this working by adjusting some of the jQuery syntax I was using to use vanilla javascript. This is pretty cool, because now I don't need jQuery at all on this project but it's also just a good exercise of translating what's in my brain into what's possible with vanilla JavaScript these days. Pretty sweet.
+
 ## TODO:
 
+- [ ] Clean up Github Action files (generic comments still linger)
 - [x] Approach styling organization. Document how this is done in the README.
 - [x] I'm getting an annoying syntax error on styles.scss but it's definitely valid. Could look into that?
 
 ## Stretch TODO:
 
 - [ ] I set this workspace up a long time ago on this machine. Could be helpful to document all the pieces that go into it and make it easier to set up again. Containerized workspace? Maybe that's a bit much, but I at least have my laptop to consider.
+- [ ] Are there ways that I can enhance my usage of Github Actions so it's doing more for me? It is pretty basic right now.
 
 ## Breadcrumbs
 
