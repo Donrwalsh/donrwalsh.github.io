@@ -1,9 +1,6 @@
 {
   "folders": [
     {
-      "path": "../CCI"
-    },
-    {
       "path": "../CLRS"
     },
     {
@@ -29,13 +26,6 @@
             "commands": [
               "cd ../CLRS/",
               "RUBYOPT='W0' bundle exec jekyll serve --port 4001"
-            ]
-          },
-          {
-            "name": "cci",
-            "commands": [
-              "cd ../CCI/",
-              "RUBYOPT='W0' bundle exec jekyll serve --port 4002"
             ]
           }
         ]
