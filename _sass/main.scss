@@ -29,6 +29,10 @@ main {
   text-decoration: none;
 }
 
+.footer-text {
+  color: var(--bs-navbar-brand-color);
+}
+
 .header {
   position: fixed;
   width: 100%;
