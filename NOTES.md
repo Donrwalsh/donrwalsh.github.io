@@ -54,6 +54,10 @@ Woke up this morning by playing around with styling. I established a `clrs.scss`
 
 `random-assignment` is more appropriate as an id than a class. So I got this working by adjusting some of the jQuery syntax I was using to use vanilla javascript. This is pretty cool, because now I don't need jQuery at all on this project but it's also just a good exercise of translating what's in my brain into what's possible with vanilla JavaScript these days. Pretty sweet.
 
+### 11/27/25
+
+Little bit of morning work finalizing some updates to my resume I worked on yesterday. Now I'm off to have some delicious grub! Happy Thanksgiving!
+
 ## TODO:
 
 - [ ] Clean up Github Action files (generic comments still linger)
