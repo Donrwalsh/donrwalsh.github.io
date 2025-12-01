@@ -64,12 +64,15 @@ Alrighty, I'm here to shake off the Thanksgiving. Grabbing the top TODO for now 
 
 While playing around with this, I noticed that CLRS was running two sets of GitHub Actions on every run: one was the workflow defined by the project-contained yaml file, but the other was the default github pages build action at the repo level. I messed with settings a bit and turned off the automatic run and then upon a commit I see that only one workflow is running, nice. Also seems to be happening on this Repo, so let's mess with that.
 
+Wrote a new intro for the main page.
+
 ## TODO:
 
-- [ ] Clean up Github Action files (generic comments still linger)
+- [x] Clean up Github Action files (generic comments still linger)
 - [x] Approach styling organization. Document how this is done in the README.
 - [x] I'm getting an annoying syntax error on styles.scss but it's definitely valid. Could look into that?
 - [ ] Links on CLRS are odd. Main nav page links don't underline even on hover and forward/back links on solutions are always underlined.
+- [ ] Chapter/Card specific progress indicators for CLRS would be cool and fun to build.
 
 ## Stretch TODO:
 
