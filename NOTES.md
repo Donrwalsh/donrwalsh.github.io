@@ -58,11 +58,18 @@ Woke up this morning by playing around with styling. I established a `clrs.scss`
 
 Little bit of morning work finalizing some updates to my resume I worked on yesterday. Now I'm off to have some delicious grub! Happy Thanksgiving!
 
+### 12/1/25
+
+Alrighty, I'm here to shake off the Thanksgiving. Grabbing the top TODO for now so let's look into Github Actions. Looks like at the free tier I'm dealing with 2,000 build minutes monthly and 500MB artifact storage cumulative. Last month I had 130 total minutes for 25 total runs. Sorta high, but I'm not gonna hit the limits for a while.
+
+While playing around with this, I noticed that CLRS was running two sets of GitHub Actions on every run: one was the workflow defined by the project-contained yaml file, but the other was the default github pages build action at the repo level. I messed with settings a bit and turned off the automatic run and then upon a commit I see that only one workflow is running, nice. Also seems to be happening on this Repo, so let's mess with that.
+
 ## TODO:
 
 - [ ] Clean up Github Action files (generic comments still linger)
 - [x] Approach styling organization. Document how this is done in the README.
 - [x] I'm getting an annoying syntax error on styles.scss but it's definitely valid. Could look into that?
+- [ ] Links on CLRS are odd. Main nav page links don't underline even on hover and forward/back links on solutions are always underlined.
 
 ## Stretch TODO:
 
