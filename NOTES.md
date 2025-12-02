@@ -66,16 +66,24 @@ While playing around with this, I noticed that CLRS was running two sets of GitH
 
 Wrote a new intro for the main page.
 
+### 12/2/25
+
+Today I posted a new CLRS solution for the first time in a long while. I'm working on brushing up on my data structures, so I chose chapter 10 as my spot to start. It was quick to review the work I'd already done on linked lists, and the problem I tackled (10.2-4) was pretty straightforward. Great choice for getting my feet wet once again!
+
+Made a few minor adjustments to styling because I noticed an inconsistency in how links were being underlined. Now links on the main CLRS page and previous/next links within a solution should only show underline during hover.
+
 ## TODO:
 
+- [ ] Front page image is too large. Didn't load once for me, awkwardly.
 - [x] Clean up Github Action files (generic comments still linger)
 - [x] Approach styling organization. Document how this is done in the README.
 - [x] I'm getting an annoying syntax error on styles.scss but it's definitely valid. Could look into that?
-- [ ] Links on CLRS are odd. Main nav page links don't underline even on hover and forward/back links on solutions are always underlined.
+- [x] Links on CLRS are odd. Main nav page links don't underline even on hover and forward/back links on solutions are always underlined.
 - [ ] Chapter/Card specific progress indicators for CLRS would be cool and fun to build.
 
 ## Stretch TODO:
 
+- [ ] Wouldn't mind updating my branch names to be `main` instead of `master`.
 - [ ] I set this workspace up a long time ago on this machine. Could be helpful to document all the pieces that go into it and make it easier to set up again. Containerized workspace? Maybe that's a bit much, but I at least have my laptop to consider.
 - [ ] Are there ways that I can enhance my usage of Github Actions so it's doing more for me? It is pretty basic right now.
 
