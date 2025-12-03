@@ -72,6 +72,10 @@ Today I posted a new CLRS solution for the first time in a long while. I'm worki
 
 Made a few minor adjustments to styling because I noticed an inconsistency in how links were being underlined. Now links on the main CLRS page and previous/next links within a solution should only show underline during hover.
 
+### 12/3/25
+
+Working on some linked list exercises this morning and took another crack at the homepage copy.
+
 ## TODO:
 
 - [ ] Front page image is too large. Didn't load once for me, awkwardly.
@@ -86,6 +90,10 @@ Made a few minor adjustments to styling because I noticed an inconsistency in ho
 - [ ] Wouldn't mind updating my branch names to be `main` instead of `master`.
 - [ ] I set this workspace up a long time ago on this machine. Could be helpful to document all the pieces that go into it and make it easier to set up again. Containerized workspace? Maybe that's a bit much, but I at least have my laptop to consider.
 - [ ] Are there ways that I can enhance my usage of Github Actions so it's doing more for me? It is pretty basic right now.
+
+## Other TODO:
+
+- [ ] WalkCCC has an incorrect solution on 10.2-5 because it assumes a sentinel variable. Could do a PR for that.
 
 ## Breadcrumbs
 
