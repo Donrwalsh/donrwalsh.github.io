@@ -76,6 +76,16 @@ Made a few minor adjustments to styling because I noticed an inconsistency in ho
 
 Working on some linked list exercises this morning and took another crack at the homepage copy.
 
+### 12/4/25
+
+I discovered that I am 2 versions behind on Mathjax. [Version 3](https://docs.mathjax.org/en/latest/upgrading/v2.html) is a full rewrite (meaning it isn't backwards compatible) and [Version 4](https://docs.mathjax.org/en/latest/upgrading/v3.html) has some fancy table decorations that I want to use for exercise 10.3-1. Upgrading looks to be no small task, so I'm going to park the idea for now and potentially swing back around later to do it. I'd need to pretty much vet every single solution and I'm pretty pleased with how v2.75 performs right now so I'm not looking to switch just yet.
+
+Chatting with an old colleague, I made a version of my resume that's data-focused. Didn't require much changes, but I'm also listening to feedback on it so I may make some more adjustments here soon.
+
+### 12/5/25
+
+Not much exciting to report. Chatting with some recruiters and doing initial tech screens. I'm getting a little tired of linked lists though, might pivot to hash tables soon.
+
 ## TODO:
 
 - [ ] Front page image is too large. Didn't load once for me, awkwardly.
@@ -90,6 +100,7 @@ Working on some linked list exercises this morning and took another crack at the
 - [ ] Wouldn't mind updating my branch names to be `main` instead of `master`.
 - [ ] I set this workspace up a long time ago on this machine. Could be helpful to document all the pieces that go into it and make it easier to set up again. Containerized workspace? Maybe that's a bit much, but I at least have my laptop to consider.
 - [ ] Are there ways that I can enhance my usage of Github Actions so it's doing more for me? It is pretty basic right now.
+- [ ] Mathjax upgrade from v2.75 to 3 or 4.
 
 ## Other TODO:
 
