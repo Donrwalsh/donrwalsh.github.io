@@ -25,7 +25,7 @@ jobs:
 
       - name: Fetch API data
         run: |
-          curl -s "https://api.scryfall.com/cards/random" -o ./_site/data.json
+          curl -s "https://api.scryfall.com/cards/random" -o ./_data/data.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
