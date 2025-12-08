@@ -23,11 +23,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Fetch API data
+      - name: Fetch Player data
         run: |
           curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173770&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff1.json
           curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173780&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff2.json
-          jq -s '.' ./_data/ff1.json ./_data/ff2.json > ./_data/data.json
+          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173790&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff3.json
+          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173800&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff4.json
+          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173810&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff5.json
+          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173820&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff6.json
+          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=39140&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff7.json
+          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1026680&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff8.json
+          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=377840&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff9.json
+          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=359870&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff10-10-2.json
+          jq -s '.' ./_data/ff1.json ./_data/ff2.json ./_data/ff3.json ./_data/ff4.json ./_data/ff5.json ./_data/ff6.json ./_data/ff7.json ./_data/ff8.json ./_data/ff9.json ./_data/ff10-10-2.json > ./_data/data.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
