@@ -1,0 +1,15 @@
+---
+layout: default
+title: Notes
+---
+
+<script>
+
+    var myPageData = {{ site.data.data | jsonify }};
+
+  function getData() {
+    console.log(myPageData);
+  }
+
+  getData();
+</script>

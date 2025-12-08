@@ -23,6 +23,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Fetch API data
+        run: |
+          curl -s "https://api.scryfall.com/cards/random" -o ./_site/data.json
+
       - name: Setup Pages
         uses: actions/configure-pages@v2
 
