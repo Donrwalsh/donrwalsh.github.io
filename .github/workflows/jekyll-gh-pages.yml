@@ -25,7 +25,7 @@ jobs:
 
       - name: Fetch API data
         run: |
-          curl -s "https://api.scryfall.com/cards/random" -o ./_data/data.json
+          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173770&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/data.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
