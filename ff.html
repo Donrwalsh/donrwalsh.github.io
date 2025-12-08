@@ -5,10 +5,12 @@ title: Notes
 
 <script>
 
-    var myPageData = {{ site.data.data | jsonify }};
+    var playerData = {{ site.data.player | jsonify }};
+    var schemaData = {{ site.data.schema | jsonify }};
 
   function getData() {
-    console.log(myPageData);
+    console.log(playerData);
+    console.log(schemaData);
   }
 
   getData();
