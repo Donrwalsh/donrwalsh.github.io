@@ -27,7 +27,7 @@ jobs:
         run: |
           curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173770&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff1.json
           curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173780&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff2.json
-          jq -s '.' ./_data/ff1.json ./_data/ff2.json > data.json
+          jq -s '.' ./_data/ff1.json ./_data/ff2.json > ./_data/data.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
