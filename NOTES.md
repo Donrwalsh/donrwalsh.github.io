@@ -86,6 +86,14 @@ Chatting with an old colleague, I made a version of my resume that's data-focuse
 
 Not much exciting to report. Chatting with some recruiters and doing initial tech screens. I'm getting a little tired of linked lists though, might pivot to hash tables soon.
 
+### 12/9/25
+
+This weekend I had an interesting idea that I'm playing around with this week. I'm a big fan of the Final Fantasy series and I recently picked up a Steam Deck and the entire mainline game library. I've since been picking away at the games and I figured it'd be fun to track my progress through this task on a sub-page of this site! Steam has an API that I can use to obtain details about my progress through games (via achievements), but this requires an API key so I can't just make the API calls in the javascript of my site. Instead, I opted to set them up running through Github Actions which allows for obfuscating secret information.
+
+The way I've got this setup is the github action workflow that I use to create my github pages now performs a suite of API calls to grab user stats and game schemas for each of the games that I've designated as a member of 'the list'. The response to these calls are combined together into two different json files that are placed in the `./_data` folder prior to building the site. Then the page that works with this data `ff.html` is built as though those json files are already present and boom, I have a working page that does what I want and my API key is safe and secure. Pretty cool, and only took me a couple of hours to put together! Shout-out to Github Actions for being easy to use.
+
+Now I'm messing around with the different data payloads and manipulating them to show the data I want. So far, I've had to deal with pretty odd naming conventions for the games but that was solved with a simple mapping yaml file. Other than that it's mostly been a matter of cozying up with the structure of the data and getting it to display things the way I want them to be displayed. I've got some work that I didn't commit from yesterday that has the page show a list of (proper) game names and then a readout of achievements completed out of total achievements. Thinking maybe some accordion structure from here?
+
 ## TODO:
 
 - [ ] Front page image is too large. Didn't load once for me, awkwardly.

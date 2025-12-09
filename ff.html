@@ -3,6 +3,29 @@ layout: default
 title: Notes
 ---
 
+{% assign games_amount = site.data.schema | size %}
+
+{% for i in (0..games_amount) %}
+
+    {% unless forloop.last %}
+        {% assign player_game = site.data.player[i].playerstats %}
+        {% assign player_achievement_count = site.data.player[i].playerstats.achievements | size %}
+        {% assign total_achievement_count = site.data.schema[i].game.availableGameStats.achievements | size %}
+
+
+        {% if site.data.name_map[player_game.gameName] %} 
+            {{site.data.name_map[player_game.gameName]}} 
+            
+            {{ player_achievement_count }} / {{ total_achievement_count }}
+        {% else %} 
+            {{ player_game.gameName }}
+
+            {{ player_achievement_count }} / {{ total_achievement_count }}
+        {% endif %}
+    <br />
+    {% endunless %}
+{% endfor %}
+
 <script>
 
     var playerData = {{ site.data.player | jsonify }};
@@ -12,6 +35,6 @@ title: Notes
     console.log(playerData);
     console.log(schemaData);
   }
-
+  
   getData();
 </script>

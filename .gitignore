@@ -5,3 +5,5 @@ _site/
 .jekyll-metadata
 Gemfile.lock
 .~lock.*
+_data/player.json
+_data/schema.json
