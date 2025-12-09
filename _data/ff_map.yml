@@ -1,0 +1,30 @@
+accordion_ids:
+  [
+    "collapseOne",
+    "collapseTwo",
+    "collapseThree",
+    "collapseFour",
+    "collapseFive",
+    "collapseSix",
+    "collapseSeven",
+    "collapseEight",
+    "collapseNine",
+    "collapseTen",
+    "collapseEleven",
+    "collapseTwelve",
+  ]
+ico_paths:
+  [
+    "ff1.ico",
+    "ff2.ico",
+    "ff3.ico",
+    "ff4.ico",
+    "ff5.ico",
+    "ff6.ico",
+    "ff7.ico",
+    "ff8.ico",
+    "ff9.ico",
+    "ff10.ico",
+    "ff12.ico",
+    "ff13.ico",
+  ]

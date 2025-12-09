@@ -24,3 +24,108 @@
 .accordion-body {
   padding: 0 0 20px 0;
 }
+
+body {
+  background: #f8f9fa;
+}
+
+.game-icon {
+  height: 24px;
+  padding-right: 10px;
+}
+
+.accordion-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  border: none;
+  margin-bottom: 15px;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.accordion-button {
+  padding: 20px 25px;
+  border-radius: 12px !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  background: white;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #0d6efd;
+  background: #f8f9fa;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(13, 110, 253, 0.25);
+}
+
+.accordion-button::after {
+  background-image: none;
+  content: "\F282";
+  font-family: "Bootstrap-icons";
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #6c757d;
+  transition: transform 0.3s ease;
+}
+
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(-180deg);
+  color: #0d6efd;
+}
+
+.accordion-body {
+  padding: 20px 25px;
+  color: #495057;
+  line-height: 1.6;
+  background: white;
+}
+
+.feature-icon {
+  margin-right: 12px;
+  color: #0d6efd;
+  font-size: 1.2rem;
+}
+
+.badge-custom {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.progress {
+  height: 8px;
+  margin-top: 15px;
+  border-radius: 4px;
+}
+
+.list-group-item {
+  border: none;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.status-icon {
+  margin-right: 10px;
+}
+
+.image-preview {
+  border-radius: 8px;
+  margin-top: 15px;
+}

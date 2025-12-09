@@ -94,6 +94,8 @@ The way I've got this setup is the github action workflow that I use to create m
 
 Now I'm messing around with the different data payloads and manipulating them to show the data I want. So far, I've had to deal with pretty odd naming conventions for the games but that was solved with a simple mapping yaml file. Other than that it's mostly been a matter of cozying up with the structure of the data and getting it to display things the way I want them to be displayed. I've got some work that I didn't commit from yesterday that has the page show a list of (proper) game names and then a readout of achievements completed out of total achievements. Thinking maybe some accordion structure from here?
 
+Pulled icons from https://www.steamgriddb.com/. Copyright concerns? I used an accordion template to get the ball rolling and the chevrons behave oddly. Otherwise, what I built here has all the core functionality that I want for this page. Jekyll logic is goofy, but it flows once you think about it the right ways.
+
 ## TODO:
 
 - [ ] Front page image is too large. Didn't load once for me, awkwardly.
