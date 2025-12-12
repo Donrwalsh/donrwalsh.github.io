@@ -1,0 +1,45 @@
+{
+  "folders": [
+    {
+      "path": "../CLRS"
+    },
+    {
+      "path": "./"
+    },
+    {
+      "path": "../syxer"
+    }
+  ],
+  "settings": {
+    "restoreTerminals.artificialDelayMilliseconds": 700,
+    "restoreTerminals.keepExistingTerminalsOpen": false,
+    "restoreTerminals.runOnStartup": true,
+    "restoreTerminals.terminals": [
+      {
+        "splitTerminals": [
+          {
+            "name": "main",
+            "commands": [
+              "cd ../donrwalsh.github.io",
+              "$env:RUBYOPT='W0'; bundle exec jekyll serve --port 4000"
+            ]
+          },
+          {
+            "name": "clrs",
+            "commands": [
+              "cd ../CLRS/",
+              "$env:RUBYOPT='W0'; bundle exec jekyll serve --port 4001"
+            ]
+          },
+          {
+            "name": "syxer",
+            "commands": [
+              "cd ../syxer/syxer/",
+              "npm run start"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
