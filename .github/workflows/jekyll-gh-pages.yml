@@ -55,7 +55,7 @@ jobs:
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=359870" -o ./_data/ff10-10-2-schema.json
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=595520" -o ./_data/ff12-schema.json
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=292120" -o ./_data/ff13-schema.json
-          jq -s '.' ./_data/ff1-schema.json ./_data/ff2-schema.json ./_data/ff3-schema.json ./_data/ff4-schema.json ./_data/ff5-schema.json ./_data/ff6-schema.json ./_data/ff7-schema.json ./_data/ff7-rem-i.json ./_data/ff8-schema.json ./_data/ff9-schema.json ./_data/ff10-10-2-schema.json ./_data/ff12-schema.json ./_data/ff13-schema.json > ./_data/schema.json
+          jq -s '.' ./_data/ff1-schema.json ./_data/ff2-schema.json ./_data/ff3-schema.json ./_data/ff4-schema.json ./_data/ff5-schema.json ./_data/ff6-schema.json ./_data/ff7-schema.json ./_data/ff7-rem-i-schema.json ./_data/ff8-schema.json ./_data/ff9-schema.json ./_data/ff10-10-2-schema.json ./_data/ff12-schema.json ./_data/ff13-schema.json > ./_data/schema.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
