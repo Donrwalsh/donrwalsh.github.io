@@ -32,13 +32,16 @@ jobs:
           curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173810&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff5.json
           curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173820&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff6.json
           curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=39140&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff7.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1462040&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff7-rem-i.json
+          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1462040&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff7-remake.json
+          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=2909400&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff7-rebirth.json
           curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1026680&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff8.json
           curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=377840&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff9.json
           curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=359870&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff10-10-2.json
           curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=595520&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff12.json
           curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=292120&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff13.json
-          jq -s '.' ./_data/ff1.json ./_data/ff2.json ./_data/ff3.json ./_data/ff4.json ./_data/ff5.json ./_data/ff6.json ./_data/ff7.json ./_data/ff7-rem-i.json ./_data/ff8.json ./_data/ff9.json ./_data/ff10-10-2.json ./_data/ff12.json ./_data/ff13.json > ./_data/player.json
+          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=637650&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff15.json
+          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1004640&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/fftactics.json
+          jq -s '.' ./_data/ff1.json ./_data/ff2.json ./_data/ff3.json ./_data/ff4.json ./_data/ff5.json ./_data/ff6.json ./_data/ff7.json ./_data/ff7-remake.json ./_data/ff7-rebirth.json ./_data/ff8.json ./_data/ff9.json ./_data/ff10-10-2.json ./_data/ff12.json ./_data/ff13.json ./_data/ff15.json ./_data/fftactics.json > ./_data/player.json
 
       - name: Fetch Schema data
         run: |
@@ -49,13 +52,16 @@ jobs:
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1173810" -o ./_data/ff5-schema.json
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1173820" -o ./_data/ff6-schema.json
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=39140" -o ./_data/ff7-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1462040" -o ./_data/ff7-rem-i-schema.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1462040" -o ./_data/ff7-remake-schema.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=2909400" -o ./_data/ff7-rebirth-schema.json
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1026680" -o ./_data/ff8-schema.json
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=377840" -o ./_data/ff9-schema.json
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=359870" -o ./_data/ff10-10-2-schema.json
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=595520" -o ./_data/ff12-schema.json
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=292120" -o ./_data/ff13-schema.json
-          jq -s '.' ./_data/ff1-schema.json ./_data/ff2-schema.json ./_data/ff3-schema.json ./_data/ff4-schema.json ./_data/ff5-schema.json ./_data/ff6-schema.json ./_data/ff7-schema.json ./_data/ff7-rem-i-schema.json ./_data/ff8-schema.json ./_data/ff9-schema.json ./_data/ff10-10-2-schema.json ./_data/ff12-schema.json ./_data/ff13-schema.json > ./_data/schema.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=637650" -o ./_data/ff15-schema.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1004640" -o ./_data/fftactics-schema.json
+          jq -s '.' ./_data/ff1-schema.json ./_data/ff2-schema.json ./_data/ff3-schema.json ./_data/ff4-schema.json ./_data/ff5-schema.json ./_data/ff6-schema.json ./_data/ff7-schema.json ./_data/ff7-remake-schema.json ./_data/ff7-rebirth-schema.json ./_data/ff8-schema.json ./_data/ff9-schema.json ./_data/ff10-10-2-schema.json ./_data/ff12-schema.json ./_data/ff13-schema.json ./_data/ff15-schema.json ./_data/fftactics-schema.json > ./_data/schema.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
