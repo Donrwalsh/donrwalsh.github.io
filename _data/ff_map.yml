@@ -13,6 +13,9 @@ accordion_ids:
     "collapseEleven",
     "collapseTwelve",
     "collapseThirteen",
+    "collapseFourteen",
+    "collapseFifteen",
+    "collapseSixteen",
   ]
 ico_paths:
   [
@@ -23,10 +26,13 @@ ico_paths:
     "ff5.ico",
     "ff6.ico",
     "ff7.ico",
-    "ff7-rem-i.ico",
+    "ff7-remake.ico",
+    "ff7-rebirth.ico",
     "ff8.ico",
     "ff9.ico",
     "ff10.ico",
     "ff12.ico",
     "ff13.ico",
+    "ff15.ico",
+    "fftactics.ico",
   ]
