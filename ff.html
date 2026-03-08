@@ -3,105 +3,113 @@ layout: default
 title: FF
 ---
 
-<div class="container accordion-container">
-    <h1 class="title">
-        <i class="bi bi-controller"></i>
-        Final Fantasy
-    </h1>
+<h1 class="title">
+    <i class="bi bi-controller"></i>
+    Final Fantasy
+</h1>
 
-    <div class="accordion" id="projectAccordion">
+{% assign games_amount = site.data.schema | size %}
+{% assign achievement_count = -1 %}
+{% for i in (0..games_amount) %}
+
+    {% unless forloop.last %}
+        {% assign player_game = site.data.player[i].playerstats %}
+        {% assign game_achievements_schema = site.data.schema[i].game.availableGameStats.achievements %}
         
-        {% assign games_amount = site.data.schema | size %}
+        {% assign player_game_achievements = site.data.player[i].playerstats.achievements %}
 
-        {% for i in (0..games_amount) %}
+        {% assign my_array = "" | split: ',' %}
 
-            {% unless forloop.last %}
-                {% assign player_game = site.data.player[i].playerstats %}
-                {% assign game_achievements_schema = site.data.schema[i].game.availableGameStats.achievements %}
-                
-                    {% assign player_game_achievements = site.data.player[i].playerstats.achievements %}
-
-                    {% assign my_array = "" | split: ',' %}
-
-                    {% for achievement in player_game_achievements %}
-                        {% if achievement.achieved == 1 %}
-                            {% assign my_array = my_array | push: achievement.name %}
-                        {% endif %}        
-                    {% endfor %}
-
-
-                {% assign player_achievement_count = site.data.player[i].playerstats.achievements | size %}
-                {% assign total_achievement_count = site.data.schema[i].game.availableGameStats.achievements | size %}
-
-                {% assign achievement_percent = player_achievement_count | times: 100 | divided_by: total_achievement_count %}
-
-                {% if site.data.name_map[player_game.gameName] %} 
-                    {% assign game_name = site.data.name_map[player_game.gameName] %}  
-                {% else %} 
-                    {% assign game_name = player_game.gameName %} 
-                {% endif %}
-
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ site.data.ff_map.accordion_ids[i] }}">
-                                <img
-                                    src="{{site.baseurl}}/assets/img/{{ site.data.ff_map.ico_paths[i] }}"
-                                    class="game-icon"
-                                    alt="{{ game_name }} game icon"
-                                    />
-                                <span class="flex-grow-1">{{ game_name}}</span>
-                                {% if achievement_percent == 100 %}
-                                    <span class="badge bg-success badge-custom me-3">Completed</span>
-                                {% elsif achievement_percent > 50 %}
-                                    <span class="badge bg-primary badge-custom me-3">In Progress</span>
-                                {% elsif achievement_percent > 0 %}
-                                    <span class="badge bg-warning badge-custom me-3">In Progress</span>
-                                {% else %}
-                                    <span class="badge bg-secondary badge-custom me-3">Upcoming</span>
-                                {% endif %}
-                            </button>
-                    </h2>
-                    <div id="{{ site.data.ff_map.accordion_ids[i] }}" class="accordion-collapse collapse" data-bs-parent="#projectAccordion">
-                        <div class="accordion-body">
-                            <div class="progress">
-                                {% if achievement_percent == 100 %}
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ achievement_percent }}%"></div>
-                                {% elsif achievement_percent > 50 %}
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: {{ achievement_percent }}%"></div>
-                                {% elsif achievement_percent > 0 %}
-                                    <div class="progress-bar bg-warning" role="progressbar" style="width: {{ achievement_percent }}%"></div>
-                                {% else %}
-                                    <div class="progress-bar bg-secondary" role="progressbar" style="width: {{ achievement_percent }}%"></div>
-                                {% endif %}
-                            </div>
-                            <ul class="list-group list-group-flush mt-3">
-
-                                {% for achievement in game_achievements_schema %}
-                                    {% if my_array contains achievement.name %}
-                                        <li class="list-group-item">
-                                            <i class="bi bi-check-circle-fill text-success status-icon"></i>
-                                            {{ achievement.displayName }}
-                                        </li>
-                                    {% else %}
-                                        <li class="list-group-item">
-                                            <i class="bi bi-clock-fill text-secondary status-icon"></i>
-                                            {{ achievement.displayName }}
-                                        </li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            {% endunless %}
+        {% for achievement in player_game_achievements %}
+            {% if achievement.achieved == 1 %}
+                {% assign my_array = my_array | push: achievement.name %}
+            {% endif %}        
         {% endfor %}
-    </div>
-</div>
 
 
+        {% assign player_achievement_count = site.data.player[i].playerstats.achievements | size %}
+        {% assign total_achievement_count = site.data.schema[i].game.availableGameStats.achievements | size %}
+
+        {% assign achievement_percent = player_achievement_count | times: 100 | divided_by: total_achievement_count %}
+
+        {% if site.data.name_map[player_game.gameName] %} 
+            {% assign game_name = site.data.name_map[player_game.gameName] %}  
+        {% else %} 
+            {% assign game_name = player_game.gameName %} 
+        {% endif %}
+
+    
+        {% for achievement in game_achievements_schema %}
+            {% assign achievement_count = achievement_count | plus : 1 %}
+            {% if my_array contains achievement.name %}
+                <div class="ach"
+                    style="width:50px;
+                            height:50px;
+                            background: linear-gradient(rgba(100, 210, 70, 0.5), rgba(116, 192, 130, 0.5)), url('{{site.baseurl}}/assets/img/{{ site.data.ff_map.ico_paths[i] }}'); 
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;
+                            display:inline-block;
+                            margin:5px;"class="square"
+                        title="{{achievement.displayName}}"
+                        ></div>
+            {% else %}
+                <div class="ach"
+                    style="width:50px;
+                            height:50px;
+                            background: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5)), url('{{site.baseurl}}/assets/img/{{ site.data.ff_map.ico_paths[i] }}'); 
+                            background-repeat: no-repeat; 
+                            background-size: cover;
+                            background-position: center;
+                            display:inline-block;
+                            margin:5px;"class="square"
+                        title="{{achievement.displayName}}"
+                        ></div>
+            {% endif %}
+
+            <!-- The Modal -->
+            <div id="ach-{{achievement_count}}" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                <span id="close-{{achievement_count}}">&times;</span>
+                <h2>Modal Header</h2>
+                </div>
+                <div class="modal-body">
+                <p>Some text in the Modal Body</p>
+                <p>Some other text...</p>
+                </div>
+                <div class="modal-footer">
+                <h3>Modal Footer</h3>
+                </div>
+            </div>
+
+            </div>
+            
+        {% endfor %}
+    {% endunless %}
+{% endfor %}
 
 <script>
+    var achievements = document.getElementsByClassName('ach');
+    for (let i = 0; i < achievements.length; i++) {
+        achievements[i].onclick = function() {
+            var modal = document.getElementById(`ach-${i}`);
+            modal.style.display = "block";
+
+            var close = document.getElementById(`close-${i}`);
+            close.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    }
 
     var playerData = {{ site.data.player | jsonify }};
     var schemaData = {{ site.data.schema | jsonify }};
