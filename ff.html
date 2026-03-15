@@ -3,6 +3,9 @@ layout: default
 title: FF
 ---
 
+{% assign count = 0 %}
+{% assign complete = 0 %}
+
 <h1 class="title">
     <i class="bi bi-controller"></i>
     Final Fantasy
@@ -22,6 +25,7 @@ title: FF
 
         {% for achievement in player_game_achievements %}
             {% if achievement.achieved == 1 %}
+            {% capture complete %}{{ complete | plus: 1 }}{% endcapture %}
                 {% assign my_array = my_array | push: achievement.name %}
             {% endif %}        
         {% endfor %}
@@ -29,6 +33,7 @@ title: FF
 
         {% assign player_achievement_count = site.data.player[i].playerstats.achievements | size %}
         {% assign total_achievement_count = site.data.schema[i].game.availableGameStats.achievements | size %}
+        {% capture count %}{{ count | plus: total_achievement_count }}{% endcapture %}
 
         {% assign achievement_percent = player_achievement_count | times: 100 | divided_by: total_achievement_count %}
 
@@ -90,6 +95,9 @@ title: FF
         {% endfor %}
     {% endunless %}
 {% endfor %}
+<div class="row" id="percent-container">
+    <h3 id="percent">{{complete | times: 1.0 | divided_by: count | times: 10000 | round | divided_by: 100.0}}% complete</h1>
+</div>
 
 <script>
     var achievements = document.getElementsByClassName('ach');
