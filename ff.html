@@ -50,7 +50,7 @@ title: FF
                 <div class="ach"
                     style="width:50px;
                             height:50px;
-                            background: linear-gradient(rgba(100, 210, 70, 0.5), rgba(116, 192, 130, 0.5)), url('{{site.baseurl}}/assets/img/{{ site.data.ff_map.ico_paths[i] }}'); 
+                            background: url('{{achievement.icon}}'); 
                             background-repeat: no-repeat;
                             background-size: cover;
                             background-position: center;
@@ -62,7 +62,7 @@ title: FF
                 <div class="ach"
                     style="width:50px;
                             height:50px;
-                            background: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5)), url('{{site.baseurl}}/assets/img/{{ site.data.ff_map.ico_paths[i] }}'); 
+                            background: url('{{achievement.icongray}}'); 
                             background-repeat: no-repeat; 
                             background-size: cover;
                             background-position: center;
@@ -79,14 +79,13 @@ title: FF
             <div class="modal-content">
                 <div class="modal-header">
                 <span id="close-{{achievement_count}}">&times;</span>
-                <h2>Modal Header</h2>
+                <h2>{{achievement.displayName}}</h2>
                 </div>
                 <div class="modal-body">
-                <p>Some text in the Modal Body</p>
-                <p>Some other text...</p>
+                <p>{{achievement.description}}</p>
                 </div>
                 <div class="modal-footer">
-                <h3>Modal Footer</h3>
+                <h3>{{game_name}}</h3>
                 </div>
             </div>
 
@@ -97,6 +96,7 @@ title: FF
 {% endfor %}
 <div class="row" id="percent-container">
     <h3 id="percent">{{complete | times: 1.0 | divided_by: count | times: 10000 | round | divided_by: 100.0}}% complete</h1>
+    <p>{{complete}}/{{count}}</p>
 </div>
 
 <script>
