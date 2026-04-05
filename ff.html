@@ -10,94 +10,99 @@ title: FF
     <i class="bi bi-controller"></i>
     Final Fantasy
 </h1>
+<div id="hub-container">
+    <div class="row">
+        {% assign games_amount = site.data.schema | size %}
+        {% assign achievement_count = -1 %}
+        {% for i in (0..games_amount) %}
 
-{% assign games_amount = site.data.schema | size %}
-{% assign achievement_count = -1 %}
-{% for i in (0..games_amount) %}
+            {% unless forloop.last %}
+                {% assign player_game = site.data.player[i].playerstats %}
+                {% assign game_achievements_schema = site.data.schema[i].game.availableGameStats.achievements %}
+                
+                {% assign player_game_achievements = site.data.player[i].playerstats.achievements %}
 
-    {% unless forloop.last %}
-        {% assign player_game = site.data.player[i].playerstats %}
-        {% assign game_achievements_schema = site.data.schema[i].game.availableGameStats.achievements %}
-        
-        {% assign player_game_achievements = site.data.player[i].playerstats.achievements %}
+                {% assign my_array = "" | split: ',' %}
 
-        {% assign my_array = "" | split: ',' %}
-
-        {% for achievement in player_game_achievements %}
-            {% if achievement.achieved == 1 %}
-            {% capture complete %}{{ complete | plus: 1 }}{% endcapture %}
-                {% assign my_array = my_array | push: achievement.name %}
-            {% endif %}        
-        {% endfor %}
+                {% for achievement in player_game_achievements %}
+                    {% if achievement.achieved == 1 %}
+                    {% capture complete %}{{ complete | plus: 1 }}{% endcapture %}
+                        {% assign my_array = my_array | push: achievement.name %}
+                    {% endif %}        
+                {% endfor %}
 
 
-        {% assign player_achievement_count = site.data.player[i].playerstats.achievements | size %}
-        {% assign total_achievement_count = site.data.schema[i].game.availableGameStats.achievements | size %}
-        {% capture count %}{{ count | plus: total_achievement_count }}{% endcapture %}
+                {% assign player_achievement_count = site.data.player[i].playerstats.achievements | size %}
+                {% assign total_achievement_count = site.data.schema[i].game.availableGameStats.achievements | size %}
+                {% capture count %}{{ count | plus: total_achievement_count }}{% endcapture %}
 
-        {% assign achievement_percent = player_achievement_count | times: 100 | divided_by: total_achievement_count %}
+                {% assign achievement_percent = player_achievement_count | times: 100 | divided_by: total_achievement_count %}
 
-        {% if site.data.name_map[player_game.gameName] %} 
-            {% assign game_name = site.data.name_map[player_game.gameName] %}  
-        {% else %} 
-            {% assign game_name = player_game.gameName %} 
-        {% endif %}
+                {% if site.data.name_map[player_game.gameName] %} 
+                    {% assign game_name = site.data.name_map[player_game.gameName] %}  
+                {% else %} 
+                    {% assign game_name = player_game.gameName %} 
+                {% endif %}
 
-    
-        {% for achievement in game_achievements_schema %}
-            {% assign achievement_count = achievement_count | plus : 1 %}
-            {% if my_array contains achievement.name %}
-                <div class="ach"
-                    style="width:50px;
-                            height:50px;
-                            background: url('{{achievement.icon}}'); 
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            background-position: center;
-                            display:inline-block;
-                            margin:5px;"class="square"
-                        title="{{achievement.displayName}}"
-                        ></div>
-            {% else %}
-                <div class="ach"
-                    style="width:50px;
-                            height:50px;
-                            background: url('{{achievement.icongray}}'); 
-                            background-repeat: no-repeat; 
-                            background-size: cover;
-                            background-position: center;
-                            display:inline-block;
-                            margin:5px;"class="square"
-                        title="{{achievement.displayName}}"
-                        ></div>
-            {% endif %}
-
-            <!-- The Modal -->
-            <div id="ach-{{achievement_count}}" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-                <div class="modal-header">
-                <span id="close-{{achievement_count}}">&times;</span>
-                <h2>{{achievement.displayName}}</h2>
-                </div>
-                <div class="modal-body">
-                <p>{{achievement.description}}</p>
-                </div>
-                <div class="modal-footer">
-                <h3>{{game_name}}</h3>
-                </div>
-            </div>
-
-            </div>
             
+                {% for achievement in game_achievements_schema %}
+                    {% assign achievement_count = achievement_count | plus : 1 %}
+                    {% if my_array contains achievement.name %}
+                        <div class="ach"
+                            style="width:50px;
+                                    height:50px;
+                                    background: url('{{achievement.icon}}'); 
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+                                    background-position: center;
+                                    display:inline-block;
+                                    margin:5px;"class="square"
+                                title="{{achievement.displayName}}"
+                                ></div>
+                    {% else %}
+                        <div class="ach"
+                            style="width:50px;
+                                    height:50px;
+                                    background: url('{{achievement.icongray}}'); 
+                                    background-repeat: no-repeat; 
+                                    background-size: cover;
+                                    background-position: center;
+                                    display:inline-block;
+                                    margin:5px;"class="square"
+                                title="{{achievement.displayName}}"
+                                ></div>
+                    {% endif %}
+
+                    <!-- The Modal -->
+                    <div id="ach-{{achievement_count}}" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <span id="close-{{achievement_count}}">&times;</span>
+                        <h2>{{achievement.displayName}}</h2>
+                        </div>
+                        <div class="modal-body">
+                        <p>{{achievement.description}}</p>
+                        </div>
+                        <div class="modal-footer">
+                        <h3>{{game_name}}</h3>
+                        </div>
+                    </div>
+
+                    </div>
+                    
+                {% endfor %}
+            {% endunless %}
         {% endfor %}
-    {% endunless %}
-{% endfor %}
-<div class="row" id="percent-container">
-    <h3 id="percent">{{complete | times: 1.0 | divided_by: count | times: 10000 | round | divided_by: 100.0}}% complete</h1>
-    <p>{{complete}}/{{count}}</p>
+    </div>
+    <div class="row" id="percent-container">
+        <h3 id="percent">{{complete | times: 1.0 | divided_by: count | times: 10000 | round | divided_by: 100.0}}% complete</h1>
+        <p style="display:none">{{complete}}/{{count}}</p>
+    </div>
 </div>
+
+
 
 <script>
     var achievements = document.getElementsByClassName('ach');
