@@ -34,11 +34,11 @@ jobs:
           - { id: 346830, name: "ff4-after-years" }
           - { id: 1173810, name: "ff5" }
           - { id: 1173820, name: "ff6" }
-          - { id: 39140,  name: "ff7" }
+          - { id: 39140, name: "ff7" }
           - { id: 1608070, name: "ff7-crisis-core" }
           - { id: 1462040, name: "ff7-remake" }
           - { id: 2909400, name: "ff7-rebirth" }
-          - { id: 39150,  name: "ff8" }
+          - { id: 39150, name: "ff8" }
           - { id: 1026680, name: "ff8-remastered" }
           - { id: 377840, name: "ff9" }
           - { id: 359870, name: "ff10-10-2" }
@@ -66,7 +66,7 @@ jobs:
           name: player-json
           path: output.json
 
-merge:
+  merge:
     runs-on: ubuntu-latest
     needs: fetch
 
@@ -85,65 +85,3 @@ merge:
         run: |
           echo "Merged player.json:"
           ls -lh ./_data/player.json
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Fetch Schema data
-        run: |
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1173770" -o ./_data/ff1-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1173780" -o ./_data/ff2-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1173790" -o ./_data/ff3-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=239120" -o ./_data/ff3-3d-remake.schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1173800" -o ./_data/ff4-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=312750" -o ./_data/ff4-3d-remake-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=346830" -o ./_data/ff4-after-years-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1173810" -o ./_data/ff5-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1173820" -o ./_data/ff6-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=39140" -o ./_data/ff7-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1608070" -o ./_data/ff7-crisis-core-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1462040" -o ./_data/ff7-remake-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=2909400" -o ./_data/ff7-rebirth-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=39150" -o ./_data/ff8-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1026680" -o ./_data/ff8-remastered-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=377840" -o ./_data/ff9-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=359870" -o ./_data/ff10-10-2-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=595520" -o ./_data/ff12-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=292120" -o ./_data/ff13-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=292140" -o ./_data/ff13-2-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=345350" -o ./_data/ff13-lightning-returns-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=637650" -o ./_data/ff15-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=2515020" -o ./_data/ff16-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1004640" -o ./_data/fftactics-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=340170" -o ./_data/fftype0-hd-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=552700" -o ./_data/world-of-ff-schema.json
-          jq -s '.' ./_data/ff1-schema.json ./_data/ff2-schema.json ./_data/ff3-schema.json ./_data/ff3-3d-remake.schema.json ./_data/ff4-schema.json ./_data/ff4-3d-remake-schema.json ./_data/ff4-after-years-schema.json ./_data/ff5-schema.json ./_data/ff6-schema.json ./_data/ff7-schema.json ./_data/ff7-crisis-core-schema.json ./_data/ff7-remake-schema.json ./_data/ff7-rebirth-schema.json ./_data/ff8-schema.json ./_data/ff8-remastered-schema.json ./_data/ff9-schema.json ./_data/ff10-10-2-schema.json ./_data/ff12-schema.json ./_data/ff13-schema.json ./_data/ff13-2-schema.json ./_data/ff13-lightning-returns-schema.json ./_data/ff15-schema.json ./_data/ff16-schema.json ./_data/fftactics-schema.json  ./_data/fftype0-hd-schema.json ./_data/world-of-ff-schema.json > ./_data/schema.json
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
