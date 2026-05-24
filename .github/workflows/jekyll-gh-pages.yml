@@ -53,6 +53,9 @@ jobs:
           - { id: 552700, name: "world-of-ff" }
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Fetch Player JSON
         run: |
           curl -sf \
