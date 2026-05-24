@@ -53,35 +53,73 @@ jobs:
           - { id: 552700, name: "world-of-ff" }
 
     steps:
-      - name: Fetch JSON
-        id: fetch
+      - name: Fetch Player JSON
         run: |
           curl -sf \
             "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=${{ matrix.game.id }}&key=${{ secrets.STEAM_API_KEY }}&steamid=$STEAMID" \
-            | jq -c '.' > output.json
+            | jq -c '.' > player.json
 
-      - name: Upload JSON
+      - name: Upload Player JSON
         uses: actions/upload-artifact@v4
         with:
           name: player-json
-          path: output.json
+          path: player.json
+
+      - name: Fetch Schema JSON
+        run: |
+          curl -sf \
+            "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=${{ matrix.game.id }}" \
+            | jq -c '.' > schema.json
+
+      - name: Upload Schema JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: schema-json
+          path: schema.json
 
   merge:
     runs-on: ubuntu-latest
     needs: fetch
 
     steps:
-      - name: Download all JSON
+      - name: Download all Player JSON
         uses: actions/download-artifact@v4
         with:
           name: player-json
-          path: ./_data
+          path: ./_data/player
+
+      - name: Download all Schema JSON
+        uses: actions/download-artifact@v4
+        with:
+          name: schema-json
+          path: ./_data/schema
 
       - name: Merge into player.json
-        run: |
-          jq -s '.' ./_data/*.json > ./_data/player.json
+        run: jq -s '.' ./_data/player/*.json > ./_data/player.json
 
-      - name: Show result
-        run: |
-          echo "Merged player.json:"
-          ls -lh ./_data/player.json
+      - name: Merge into schema.json
+        run: jq -s '.' ./_data/schema/*.json > ./_data/schema.json
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: merge
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
