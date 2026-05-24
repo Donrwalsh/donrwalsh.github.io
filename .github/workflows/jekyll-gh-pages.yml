@@ -25,32 +25,32 @@ jobs:
 
       - name: Fetch Player data
         run: |
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173770&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff1.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173780&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff2.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173790&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff3.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=239120&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff3-3d-remake.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173800&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff4.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=312750&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff4-3d-remake.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=346830&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff4-after-years.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173810&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff5.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173820&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff6.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=39140&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff7.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1608070&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff7-crisis-core.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1462040&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff7-remake.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=2909400&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff7-rebirth.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=39150&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff8.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1026680&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff8-remastered.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=377840&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff9.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=359870&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff10-10-2.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=595520&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff12.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=292120&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff13.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=292140&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff13-2.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=345350&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff13-lightning-returns.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=637650&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff15.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=2515020&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff16.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1004640&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/fftactics.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=340170&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/fftype0-hd.json
-          curl -s "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=552700&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/world-of-ff.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173770&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff1.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173780&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff2.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173790&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff3.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=239120&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff3-3d-remake.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173800&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff4.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=312750&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff4-3d-remake.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=346830&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff4-after-years.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173810&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff5.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1173820&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff6.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=39140&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff7.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1608070&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff7-crisis-core.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1462040&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff7-remake.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=2909400&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff7-rebirth.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=39150&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff8.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1026680&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff8-remastered.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=377840&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff9.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=359870&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff10-10-2.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=595520&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff12.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=292120&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff13.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=292140&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff13-2.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=345350&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff13-lightning-returns.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=637650&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff15.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=2515020&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/ff16.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=1004640&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/fftactics.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=340170&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/fftype0-hd.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=552700&key=${{ secrets.STEAM_API_KEY }}&steamid=76561198054967504" -o ./_data/world-of-ff.json
           jq -s '.' ./_data/ff1.json ./_data/ff2.json ./_data/ff3.json ./_data/ff3-3d-remake.json ./_data/ff4.json ./_data/ff4-3d-remake.json ./_data/ff4-after-years.json ./_data/ff5.json ./_data/ff6.json ./_data/ff7.json ./_data/ff7-crisis-core.json ./_data/ff7-remake.json ./_data/ff7-rebirth.json ./_data/ff8.json ./_data/ff8-remastered.json ./_data/ff9.json ./_data/ff10-10-2.json ./_data/ff12.json ./_data/ff13.json ./_data/ff13-2.json ./_data/ff13-lightning-returns.json ./_data/ff15.json ./_data/ff16.json ./_data/fftactics.json ./_data/fftype0-hd.json ./_data/world-of-ff.json > ./_data/player.json
 
       - name: Fetch Schema data
