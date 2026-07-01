@@ -26,6 +26,7 @@ accordion_ids:
     "collapseTwentyFour",
     "collapseTwentyFive",
     "collapseTwentySix",
+    "collapseTwentySeven"
   ]
 ico_paths:
   [
@@ -39,6 +40,7 @@ ico_paths:
     "ff5.ico",
     "ff6.ico",
     "ff7.ico",
+    "ff7-2013.ico",
     "ff7-crisis-core.png",
     "ff7-remake.ico",
     "ff7-rebirth.ico",
