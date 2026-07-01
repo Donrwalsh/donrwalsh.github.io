@@ -64,7 +64,7 @@ jobs:
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=346830" -o ./_data/ff4-after-years-schema.json
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1173810" -o ./_data/ff5-schema.json
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1173820" -o ./_data/ff6-schema.json
-          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=39140" -o ./_data/ff7-2013schema.json
+          curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=39140" -o ./_data/ff7-2013-schema.json
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=3837340" -o ./_data/ff7-schema.json
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1608070" -o ./_data/ff7-crisis-core-schema.json
           curl -s "https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${{ secrets.STEAM_API_KEY }}&appid=1462040" -o ./_data/ff7-remake-schema.json
